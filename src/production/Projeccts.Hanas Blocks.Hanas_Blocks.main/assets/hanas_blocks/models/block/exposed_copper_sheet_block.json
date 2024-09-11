@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hanas_blocks:block/exposed_copper_sheet_block"
+  }
+}

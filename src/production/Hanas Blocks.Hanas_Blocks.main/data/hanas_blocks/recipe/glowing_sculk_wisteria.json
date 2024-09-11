@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "hanas_blocks:sculk_material"
+    }
+  },
+  "pattern": [
+    "   ",
+    "  S",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "hanas_blocks:glowing_sculk_wisteria"
+  }
+}

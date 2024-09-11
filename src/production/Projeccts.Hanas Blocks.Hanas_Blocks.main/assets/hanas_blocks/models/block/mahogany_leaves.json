@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "hanas_blocks:block/mahogany_leaves"
+  }
+}

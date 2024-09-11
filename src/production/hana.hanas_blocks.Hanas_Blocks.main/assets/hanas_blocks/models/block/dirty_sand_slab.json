@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "hanas_blocks:block/dirty_sand",
+    "side": "hanas_blocks:block/dirty_sand",
+    "top": "hanas_blocks:block/dirty_sand"
+  }
+}

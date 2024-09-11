@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/cobble_sandstone_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/cobble_sandstone"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/cobble_sandstone_slab_top"
+    }
+  }
+}

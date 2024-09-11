@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/polished_marble_brick_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/polished_marble_brick"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/polished_marble_brick_slab_top"
+    }
+  }
+}

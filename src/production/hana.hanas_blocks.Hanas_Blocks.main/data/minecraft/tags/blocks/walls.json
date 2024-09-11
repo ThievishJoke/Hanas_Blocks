@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "hanas_blocks:dripstone_wall",
+    "hanas_blocks:sandstone_brick_wall",
+    "hanas_blocks:cracked_sandstone_brick_wall",
+    "hanas_blocks:sandstone_tiles_wall",
+    "hanas_blocks:cracked_sandstone_tiles_wall",
+    "hanas_blocks:cobble_sandstone_wall",
+    "hanas_blocks:cobbling_sandstone_wall",
+    "hanas_blocks:dirty_sand_wall",
+    "hanas_blocks:polished_prismarine_wall",
+    "hanas_blocks:netherrack_brick_wall",
+    "hanas_blocks:smoothed_basalt_wall",
+    "hanas_blocks:polished_basalt_brick_wall",
+    "hanas_blocks:polished_end_stone_wall",
+    "hanas_blocks:pearlarium_wall",
+    "hanas_blocks:nigrum_petramiunium_wall",
+    "hanas_blocks:honey_comb_bricks_wall"
+  ]
+}

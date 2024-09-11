@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "hanas_blocks:block/smoothed_basalt"
+  }
+}

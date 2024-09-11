@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "hanas_blocks:nigrum_petramiunium_block"
+  },
+  "result": "hanas_blocks:nigrum_petramiunium_stairs"
+}

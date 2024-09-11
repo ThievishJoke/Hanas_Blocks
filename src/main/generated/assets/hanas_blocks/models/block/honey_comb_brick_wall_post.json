@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "hanas_blocks:block/honey_comb_bricks"
+  }
+}

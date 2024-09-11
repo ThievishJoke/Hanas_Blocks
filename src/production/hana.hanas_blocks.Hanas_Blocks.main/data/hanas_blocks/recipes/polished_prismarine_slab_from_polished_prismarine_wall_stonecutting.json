@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "hanas_blocks:polished_prismarine_wall"
+  },
+  "result": "hanas_blocks:polished_prismarine_slab"
+}

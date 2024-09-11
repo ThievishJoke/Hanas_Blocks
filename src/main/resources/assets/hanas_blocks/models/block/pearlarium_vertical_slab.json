@@ -1,0 +1,6 @@
+{
+  "parent": "hanas_blocks:block/vertical_slab_all",
+  "textures": {
+    "all": "hanas_blocks:block/pearlarium_block"
+  }
+}

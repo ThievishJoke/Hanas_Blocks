@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "hanas_blocks:block/cobbling_sandstone_block"
+  }
+}

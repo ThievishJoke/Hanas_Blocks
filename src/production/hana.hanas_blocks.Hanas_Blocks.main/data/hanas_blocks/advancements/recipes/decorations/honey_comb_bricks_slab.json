@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_honey_comb_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hanas_blocks:honey_comb_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "hanas_blocks:honey_comb_bricks_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_honey_comb_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "hanas_blocks:honey_comb_bricks_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

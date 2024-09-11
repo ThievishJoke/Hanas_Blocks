@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/mossy_granite_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/mossy_granite"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/mossy_granite_slab_top"
+    }
+  }
+}

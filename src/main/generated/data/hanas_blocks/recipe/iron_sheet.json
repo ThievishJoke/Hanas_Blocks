@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hanas_blocks:iron_sheet_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "hanas_blocks:iron_sheet"
+  }
+}

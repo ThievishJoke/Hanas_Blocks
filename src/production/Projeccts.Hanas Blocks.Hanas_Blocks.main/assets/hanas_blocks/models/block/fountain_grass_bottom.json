@@ -1,0 +1,6 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "all": "hanas_blocks:block/fountain_grass_bottom"
+  }
+}

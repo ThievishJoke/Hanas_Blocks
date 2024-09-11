@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "hanas_blocks:block/pearlarium_block",
+    "side": "hanas_blocks:block/pearlarium_block",
+    "top": "hanas_blocks:block/pearlarium_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hanas_blocks:block/cracked_polished_ice_brick"
+  }
+}

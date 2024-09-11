@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "hanas_blocks:gold_sheet_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "hanas_blocks:gold_sheet"
+  }
+}

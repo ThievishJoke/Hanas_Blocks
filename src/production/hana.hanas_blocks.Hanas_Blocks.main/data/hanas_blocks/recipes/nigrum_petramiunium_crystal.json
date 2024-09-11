@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "hanas_blocks:nigrum_petramiunium_crystal_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "hanas_blocks:nigrum_petramiunium_crystal"
+  }
+}

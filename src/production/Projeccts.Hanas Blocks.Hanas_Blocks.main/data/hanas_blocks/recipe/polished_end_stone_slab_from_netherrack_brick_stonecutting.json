@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "hanas_blocks:netherrack_brick"
+  },
+  "result": {
+    "count": 1,
+    "id": "hanas_blocks:polished_end_stone_slab"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "hanas_blocks:block/cobbling_sandstone_block"
+  }
+}

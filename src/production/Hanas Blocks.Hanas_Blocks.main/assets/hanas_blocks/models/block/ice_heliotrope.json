@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "hanas_blocks:block/ice_heliotrope"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "hanas_blocks:pearlarium_ore",
+    "hanas_blocks:deepslate_pearlarium_ore",
+    "hanas_blocks:pearlarium_crystal_block",
+    "hanas_blocks:pearlarium_alloy_sheet_block",
+    "hanas_blocks:pearlarium_block",
+    "hanas_blocks:pearlarium_slab",
+    "hanas_blocks:pearlarium_stairs",
+    "hanas_blocks:pearlarium_wall",
+    "hanas_blocks:pearlarium_trapdoor",
+    "hanas_blocks:nigrum_petramiunium_ore",
+    "hanas_blocks:deepslate_nigrum_petramiunium_ore",
+    "hanas_blocks:nigrum_petramiunium_crystal_block",
+    "hanas_blocks:nigrum_petramiunium_alloy_sheet_block",
+    "hanas_blocks:nigrum_petramiunium_block",
+    "hanas_blocks:nigrum_petramiunium_slab",
+    "hanas_blocks:nigrum_petramiunium_stairs",
+    "hanas_blocks:nigrum_petramiunium_wall",
+    "hanas_blocks:scrap_sheet_block",
+    "hanas_blocks:raw_scrap_block"
+  ]
+}

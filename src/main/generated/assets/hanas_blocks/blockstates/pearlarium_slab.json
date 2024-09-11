@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/pearlarium_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/pearlarium_block"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/pearlarium_slab_top"
+    }
+  }
+}

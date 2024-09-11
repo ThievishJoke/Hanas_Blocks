@@ -1,0 +1,25 @@
+{
+  "values": [
+    "hanas_blocks:oak_plank_bookshelf",
+    "hanas_blocks:spruce_plank_bookshelf",
+    "hanas_blocks:birch_plank_bookshelf",
+    "hanas_blocks:jungle_plank_bookshelf",
+    "hanas_blocks:acacia_plank_bookshelf",
+    "hanas_blocks:cherry_plank_bookshelf",
+    "hanas_blocks:dark_oak_plank_bookshelf",
+    "hanas_blocks:mangrove_plank_bookshelf",
+    "hanas_blocks:bamboo_plank_bookshelf",
+    "hanas_blocks:warped_plank_bookshelf",
+    "hanas_blocks:crimson_plank_bookshelf",
+    "hanas_blocks:mahogany_plank_bookshelf",
+    "hanas_blocks:mahogany_log",
+    "hanas_blocks:mahogany_wood",
+    "hanas_blocks:stripped_mahogany_log",
+    "hanas_blocks:stripped_mahogany_wood",
+    "hanas_blocks:mahogany_planks",
+    "hanas_blocks:mahogany_slab",
+    "hanas_blocks:mahogany_stairs",
+    "hanas_blocks:mahogany_fence",
+    "hanas_blocks:mahogany_fence_gate"
+  ]
+}

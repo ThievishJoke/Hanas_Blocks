@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "hanas_blocks:pearlarium_plate_helmet",
+    "hanas_blocks:pearlarium_plate_chestplate",
+    "hanas_blocks:pearlarium_plate_leggings",
+    "hanas_blocks:pearlarium_plate_boots"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "hanas_blocks:block/honey_comb_bricks",
+    "side": "hanas_blocks:block/honey_comb_bricks",
+    "top": "hanas_blocks:block/honey_comb_bricks"
+  }
+}

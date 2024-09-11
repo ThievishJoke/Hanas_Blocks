@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_netherrack_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "hanas_blocks:netherrack_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:polished_end_stone_stairs_from_netherrack_brick_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_netherrack_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:polished_end_stone_stairs_from_netherrack_brick_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

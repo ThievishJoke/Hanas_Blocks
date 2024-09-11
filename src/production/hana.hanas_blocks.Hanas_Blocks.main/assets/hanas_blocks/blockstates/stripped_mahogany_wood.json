@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "hanas_blocks:block/stripped_mahogany_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "hanas_blocks:block/stripped_mahogany_wood"
+    },
+    "axis=z": {
+      "model": "hanas_blocks:block/stripped_mahogany_wood",
+      "x": 90
+    }
+  }
+}

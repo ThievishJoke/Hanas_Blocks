@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/mahogany_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/mahogany_planks"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/mahogany_slab_top"
+    }
+  }
+}

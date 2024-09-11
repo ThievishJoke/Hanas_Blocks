@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "hanas_blocks:block/mossy_andesite_slab"
+    },
+    "type=double": {
+      "model": "hanas_blocks:block/mossy_andesite"
+    },
+    "type=top": {
+      "model": "hanas_blocks:block/mossy_andesite_slab_top"
+    }
+  }
+}

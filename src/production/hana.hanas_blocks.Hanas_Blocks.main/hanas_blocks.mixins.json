@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "hana.hanas_blocks.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ExampleMixin",
+    "ench.enchantment.CrossbowItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

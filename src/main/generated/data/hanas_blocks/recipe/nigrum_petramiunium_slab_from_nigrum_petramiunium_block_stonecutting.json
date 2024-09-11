@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "hanas_blocks:nigrum_petramiunium_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "hanas_blocks:nigrum_petramiunium_slab"
+  }
+}

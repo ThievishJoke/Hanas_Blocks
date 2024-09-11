@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "hanas_blocks:block/mahogany_planks"
+  }
+}

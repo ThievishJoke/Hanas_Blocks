@@ -1,0 +1,9 @@
+{
+    "parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"bottom": "hanas_blocks:block/powder_keg_bottom",
+		"side": "hanas_blocks:block/powder_keg_side",
+		"top": "hanas_blocks:block/powder_keg_top",
+		"particle": "hanas_blocks:block/powder_keg_top"
+	}
+}

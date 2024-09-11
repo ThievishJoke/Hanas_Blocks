@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "hanas_blocks:block/burning_blaze_powdered_block"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hanas_blocks:block/gold_sheet_block"
+  }
+}
