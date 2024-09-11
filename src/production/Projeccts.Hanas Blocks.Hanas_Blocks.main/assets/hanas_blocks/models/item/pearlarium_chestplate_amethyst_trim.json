@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hanas_blocks:item/pearlarium_chestplate",
-    "layer1": "minecraft:trims/items/chestplate_trim_amethyst"
-  }
-}

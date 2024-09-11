@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "hanas_blocks:block/scrap_sheet_block_top",
-    "side": "hanas_blocks:block/scrap_sheet_block"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "hanas_blocks:pearlarium_block"
-  },
-  "result": "hanas_blocks:pearlarium_slab"
-}

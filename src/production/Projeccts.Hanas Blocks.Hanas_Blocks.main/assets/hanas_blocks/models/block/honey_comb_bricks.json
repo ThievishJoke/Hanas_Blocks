@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "hanas_blocks:block/honey_comb_bricks"
-  }
-}

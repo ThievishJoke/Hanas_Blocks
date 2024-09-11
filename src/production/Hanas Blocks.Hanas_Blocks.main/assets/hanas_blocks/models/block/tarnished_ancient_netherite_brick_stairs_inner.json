@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "hanas_blocks:block/tarnished_ancient_netherite_brick",
-    "side": "hanas_blocks:block/tarnished_ancient_netherite_brick",
-    "top": "hanas_blocks:block/tarnished_ancient_netherite_brick"
-  }
-}

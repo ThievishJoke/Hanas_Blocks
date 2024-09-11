@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/tinted_cross",
-  "textures": {
-    "cross": "hanas_blocks:block/gomphrena_patch"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hanas_blocks:item/pearlarium_plate_leggings",
-    "layer1": "minecraft:trims/items/leggings_trim_diamond"
-  }
-}

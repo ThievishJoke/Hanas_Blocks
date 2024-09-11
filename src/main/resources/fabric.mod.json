@@ -26,11 +26,7 @@
 		]
 	},
 	"mixins": [
-		"hanas_blocks.mixins.json",
-		{
-			"config": "hanas_blocks.client.mixins.json",
-			"environment": "client"
-		}
+		"hanas_blocks.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.2",

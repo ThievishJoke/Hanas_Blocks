@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "hanas_blocks:block/polished_end_stone",
-    "side": "hanas_blocks:block/polished_end_stone",
-    "top": "hanas_blocks:block/polished_end_stone"
-  }
-}

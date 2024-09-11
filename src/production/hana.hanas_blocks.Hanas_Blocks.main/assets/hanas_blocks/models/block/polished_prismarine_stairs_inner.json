@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "hanas_blocks:block/polished_prismarine",
-    "side": "hanas_blocks:block/polished_prismarine",
-    "top": "hanas_blocks:block/polished_prismarine"
-  }
-}
