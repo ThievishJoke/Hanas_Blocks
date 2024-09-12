@@ -34,7 +34,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;
-
+//todo get the enchantment working
 public class ModEnchantments {
     public static final Enchantment.Builder FROST_THORN = new Enchantment.Builder(Enchantment.definition(
             getOrThrow(ItemTags.CHEST_ARMOR_ENCHANTABLE),
