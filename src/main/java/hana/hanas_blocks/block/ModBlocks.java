@@ -19,8 +19,6 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -35,10 +33,10 @@ public class ModBlocks {
     public static final Block CHARCOAL_BLOCK = registerBlock("charcoal_block",
         new Block(AbstractBlock.Settings.create().mapColor(GRAY).sounds(BlockSoundGroup.DEEPSLATE).strength(2.5f, 6.0f).burnable().requiresTool()));
     public static final Block POWDER_KEG = registerBlock("powder_keg",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).mapColor(MapColor.OAK_TAN).solid().strength(0.1f, 1.0f).burnable()));
+        new TntBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).mapColor(SPRUCE_BROWN).solid().strength(0.1f, 1.0f).burnable().dropsLike(Blocks.DIRT)));
     //public static final Block GUNPOWDER_BLOCK = new Block(FabricBlockSettings.create().sounds(BlockSoundGroup.SAND).strength(0.5f, 1.0f).burnable());
     public static final Block BURNING_BLAZE_POWDERED_BLOCK = registerBlock("burning_blaze_powdered_block",
-            new FallingBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SAND).mapColor(MapColor.ORANGE).strength(0.5f, 1.0f).luminance(state -> 16).burnable()) {
+            new FallingBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SAND).mapColor(MapColor.ORANGE).strength(0.5f, 1.0f).luminance(state -> 15).burnable()) {
                 @Override
                 protected MapCodec<? extends FallingBlock> getCodec() {
                     return null;
@@ -53,6 +51,8 @@ public class ModBlocks {
         new ExperienceDroppingBlock(UniformIntProvider.create(7, 14), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(2.75f, 5.0f).requiresTool()));
     public static final Block DEEPSLATE_PEARLARIUM_ORE = registerBlock("deepslate_pearlarium_ore",
         new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
+    public static final Block RAW_PEARLARIUM_BLOCK = registerBlock("raw_pearlarium_block",
+            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
     public static final Block PEARLARIUM_CRYSTAL_BLOCK = registerBlock("pearlarium_crystal_block",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(3.75f, 5.0f).requiresTool()));
     public static final Block PEARLARIUM_ALLOY_SHEET_BLOCK = registerBlock("pearlarium_alloy_sheet_block",
@@ -68,6 +68,9 @@ public class ModBlocks {
     public static final Block PEARLARIUM_TRAPDOOR = registerBlock("pearlarium_trapdoor",
         new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque()));
 
+    public static final Block PEARLARIUM_LAMP = registerBlock("pearlarium_lamp",
+            new ModLampBlock(AbstractBlock.Settings.create()
+                    .strength(1f).requiresTool().luminance(state -> state.get(ModLampBlock.CLICKED) ? 15 : 0)));
 
     //Nigrum Petramiunium
     public static final Block LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE = registerBlock("low_quality_nigrum_petramiunium_ore",
@@ -76,8 +79,10 @@ public class ModBlocks {
         new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0f, 6.0f).requiresTool()));
     public static final Block DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE = registerBlock("deepslate_nigrum_petramiunium_ore",
         new ExperienceDroppingBlock(UniformIntProvider.create(15, 25), AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(4.0f, 6.0f).requiresTool()));
+    public static final Block RAW_NIGRUM_PETRAMIUNIUM_BLOCK = registerBlock("raw_nigrum_petramiunium_block",
+            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
     public static final Block NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK = registerBlock("nigrum_petramiunium_crystal_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(1.5f, 5.0f).requiresTool()));
+        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(1.5f, 5.0f).requiresTool()));
     public static final Block NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK = registerBlock("nigrum_petramiunium_alloy_sheet_block",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(1.5f, 5.0f).requiresTool()));
     public static final Block NIGRUM_PETRAMIUNIUM_BLOCK = registerBlock("nigrum_petramiunium_block",
@@ -90,6 +95,10 @@ public class ModBlocks {
         new WallBlock(AbstractBlock.Settings.copy(NIGRUM_PETRAMIUNIUM_BLOCK).solid()));
     public static final Block NIGRUM_PETRAMIUNIUM_TRAPDOOR = registerBlock("nigrum_petramiunium_trapdoor",
             new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque()));
+
+    public static final Block NIGRUM_PETRAMIUNIUM_LAMP = registerBlock("nigrum_petramiunium_lamp",
+            new ModLampBlock(AbstractBlock.Settings.create()
+                    .strength(1f).requiresTool().luminance(state -> state.get(ModLampBlock.CLICKED) ? 15 : 0)));
 
     //Scrap & Netherite
     public static final Block RAW_SCRAP_BLOCK = registerBlock("raw_scrap_block",
@@ -142,7 +151,6 @@ public class ModBlocks {
             new HanasOxidizableWallBlock(OxidationLevel.OXIDIZED, RUINED_ANCIENT_NETHERITE_BRICK.getDefaultState(),
                     AbstractBlock.Settings.copy(RUINED_ANCIENT_NETHERITE_BRICK)));
 
-
     public static final Block SEALED_ANCIENT_NETHERITE_BRICK = registerBlock("sealed_ancient_netherite_brick",
             new Block(AbstractBlock.Settings.copy(ModBlocks.ANCIENT_NETHERITE_BRICK)));
     public static final Block SEALED_DULL_ANCIENT_NETHERITE_BRICK = registerBlock("sealed_dull_ancient_netherite_brick",
@@ -182,12 +190,6 @@ public class ModBlocks {
     public static final Block SEALED_RUINED_ANCIENT_NETHERITE_BRICK_WALL = registerBlock("sealed_ruined_netherite_brick_wall",
             new HanasOxidizableWallBlock(OxidationLevel.OXIDIZED, RUINED_ANCIENT_NETHERITE_BRICK.getDefaultState(),
                     AbstractBlock.Settings.copy(RUINED_ANCIENT_NETHERITE_BRICK)));
-
-    //public static final BlockFamily FAMILY_ANCIENT_NETHERITE_BRICK = BlockFamilies.register(ANCIENT_NETHERITE_BRICK)
-    //        .stairs(ANCIENT_NETHERITE_BRICK_STAIRS)
-    //        .slab(ANCIENT_NETHERITE_BRICK_SLAB)
-    //        .wall(ANCIENT_NETHERITE_BRICK_WALL)
-    //        .build();
 
     public static final BlockFamily FAMILY_ANCIENT_NETHERITE_BRICK = BlockFamilies.register(ModBlocks.ANCIENT_NETHERITE_BRICK)
             .slab(ModBlocks.ANCIENT_NETHERITE_BRICK_SLAB)
@@ -253,7 +255,7 @@ public class ModBlocks {
     public static final Block IRON_GRATE_SLAB = registerBlock("iron_grate_slab",
             new SlabBlock(AbstractBlock.Settings.copy(IRON_GRATE).solid()));
     public static final Block IRON_GRATE_TRAPDOOR = registerBlock("iron_grate_trapdoor",
-            new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK)));
+            new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque()));
     public static final Block CHISELED_IRON = registerBlock("chiseled_iron",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.METAL).strength(3.0f, 6.0f).mapColor(MapColor.IRON_GRAY).requiresTool()));
 
@@ -317,9 +319,6 @@ public class ModBlocks {
         new SculkBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).mapColor(MapColor.BLACK).strength(3.0f, 9.0f).requiresTool()));
     public static final Block SCULKED_POLISHED_END_STONE = registerBlock("sculked_polished_end_stone",
         new SculkBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).mapColor(MapColor.BLACK).strength(3.0f, 9.0f).requiresTool()));
-
-    //public static final Block SCULK_TABLE = registerBlock("sculk_table",
-    //    new SculkTable(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).mapColor(MapColor.BLACK).strength(3.0f, 1.0f).nonOpaque()));
 
     //Flora
     //wisteria
@@ -410,11 +409,8 @@ public class ModBlocks {
     public static final Block FOXGLOVE = registerBlock("foxglove",
         new TallFlowerBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH).nonOpaque().breakInstantly().noCollision().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
 
-    //public static final Block HOSTA = registerBlock("hosta",
-    //    new HostaFlower((StatusEffect) StatusEffects.DARKNESS, 10, AbstractBlock.Settings.create().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision()));
-
-    //public static final Block VIOLET_AUBRIETA = registerBlock("violet_aubrieta",
-    //    new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).nonOpaque().breakInstantly().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block VIOLET_AUBRIETA = registerBlock("violet_aubrieta",
+        new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).nonOpaque().breakInstantly().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
 
     //sculk
     public static final Block SCULK_FLORA = registerBlock("sculk_flora",
@@ -539,8 +535,8 @@ public class ModBlocks {
     //public static final Block POTTED_HOSTA = registerBlock("potted_hosta",
     //        new FlowerPotBlock(HOSTA, AbstractBlock.Settings.create().nonOpaque()));
 
-    //public static final Block POTTED_VIOLET_AUBRIETA = registerBlock("potted_violet_aubrieta",
-    //    new FlowerPotBlock(VIOLET_AUBRIETA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
+    public static final Block POTTED_VIOLET_AUBRIETA = registerBlock("potted_violet_aubrieta",
+        new FlowerPotBlock(VIOLET_AUBRIETA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
 
     public static final Block POTTED_SCULK_TENDRIL = registerBlock("potted_sculk_tendril",
         new FlowerPotBlock(SCULK_TENDRIL, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
@@ -561,15 +557,24 @@ public class ModBlocks {
         new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
 
     public static final Block MAHOGANY_PLANKS = registerBlock("mahogany_planks", 
-        new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(3f)));
+        new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(1.0f, 3.0f)));
     public static final Block MAHOGANY_SLAB= registerBlock("mahogany_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(PEARLARIUM_BLOCK)));
+            new SlabBlock(AbstractBlock.Settings.copy(MAHOGANY_PLANKS)));
     public static final Block MAHOGANY_STAIRS = registerBlock("mahogany_stairs",
-            new StairsBlock(PEARLARIUM_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(PEARLARIUM_BLOCK)));
+            new StairsBlock(MAHOGANY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(MAHOGANY_PLANKS)));
     public static final Block MAHOGANY_FENCE = registerBlock("mahogany_fence",
         new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(3f)));
     public static final Block MAHOGANY_FENCE_GATE = registerBlock("mahogany_fence_gate",
         new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(3f)));
+    public static final Block MAHOGANY_TRAPDOOR = registerBlock("mahogany_trapdoor",
+            new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque()));
+    public static final Block MAHOGANY_DOOR = registerBlock("mahogany_door",
+            new DoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_DOOR).nonOpaque()));
+    public static final Block MAHOGANY_PLATE = registerBlock("mahogany_plate",
+            new PressurePlateBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
+    public static final Block MAHOGANY_BUTTON = registerBlock("mahogany_button",
+            new ButtonBlock(BlockSetType.COPPER, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
+    
 
     public static final Block MAHOGANY_LEAVES = registerBlock("mahogany_leaves",
         new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).strength(1f)));
@@ -630,23 +635,23 @@ public class ModBlocks {
     public static final Block STONE_WALL = registerBlock("stone_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.STONE).solid()));
 
-    //Andesite todo add to group
+    //Andesite
     public static final Block POLISHED_ANDESITE_WALL = registerBlock("polished_andesite_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_ANDESITE).solid()));
 
-    //Diorite todo add to group
+    //Diorite
     public static final Block POLISHED_DIORITE_WALL = registerBlock("polished_diorite_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_DIORITE).solid()));
 
-    //Granite todo add to group
+    //Granite
     public static final Block POLISHED_GRANITE_WALL = registerBlock("polished_granite_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.POLISHED_GRANITE).solid()));
 
-    //Cracked Stone Brick todo add to group
+    //Cracked Stone Brick
     public static final Block CRACKED_STONE_BRICK_WALL = registerBlock("cracked_stone_brick_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.CRACKED_STONE_BRICKS).solid()));
 
-    //Smooth Stone todo add to group
+    //Smooth Stone
     public static final Block SMOOTH_STONE_STAIRS = registerBlock("smooth_stone_stairs",
             new StairsBlock(Blocks.SMOOTH_STONE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.SMOOTH_STONE)));
     public static final Block SMOOTH_STONE_WALL = registerBlock("smooth_stone_wall",
@@ -862,7 +867,7 @@ public class ModBlocks {
     public static final Block NETHERRACK_BRICK_WALL = registerBlock("netherrack_brick_wall",
         new WallBlock(AbstractBlock.Settings.copy(NETHERRACK_BRICK).solid()));
 
-    //Cracked Netherbrick todo add to group
+    //Cracked Nether Brick
     public static final Block CRACKED_NETHER_BRICK_STAIRS = registerBlock("cracked_nether_brick_stairs",
             new StairsBlock(Blocks.CRACKED_NETHER_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.CRACKED_NETHER_BRICKS)));
     public static final Block CRACKED_NETHER_BRICK_SLAB = registerBlock("cracked_nether_brick_slab",
@@ -870,7 +875,7 @@ public class ModBlocks {
     public static final Block CRACKED_NETHER_BRICK_WALL = registerBlock("cracked_nether_brick_wall",
             new WallBlock(AbstractBlock.Settings.copy(NETHERRACK_BRICK).solid()));
 
-    //Cracked Polished Blackstone Bricks todo add to group
+    //Cracked Polished Blackstone Bricks
     public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS = registerBlock("cracked_polished_blackstone_brick_stairs",
             new StairsBlock(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS)));
     public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = registerBlock("cracked_polished_blackstone_brick_slab",
@@ -887,9 +892,6 @@ public class ModBlocks {
             new SlabBlock(AbstractBlock.Settings.copy(SMOOTHED_BASALT)));
     public static final Block SMOOTHED_BASALT_WALL = registerBlock("smoothed_basalt_wall",
             new WallBlock(AbstractBlock.Settings.copy(SMOOTHED_BASALT).solid()));
-
-    //public static final Block POLISHED_BASALT_COLUMN = registerBlock("polished_basalt_column",
-        //new PillarBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.BASALT).strength(1.25f, 4.2f).requiresTool()));
 
     public static final Block POLISHED_BASALT_BRICK = registerBlock("polished_basalt_brick",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.BASALT).strength(1.25f, 4.2f).requiresTool()));
@@ -909,14 +911,10 @@ public class ModBlocks {
         new SlabBlock(AbstractBlock.Settings.copy(POLISHED_PRISMARINE)));
     public static final Block POLISHED_PRISMARINE_WALL = registerBlock("polished_prismarine_wall",
         new WallBlock(AbstractBlock.Settings.copy(POLISHED_PRISMARINE).solid()));
-    
-    //public static final Block INDENTED_DEEPSLATE = registerBlock("indented_deepslate",
-        //new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.DEEPSLATE).strength(2.5f, 6.0f).requiresTool()));
-    
+
     //Pride Blocks
     public static final Block TRANSGENDER_BLOCK = registerBlock("transgender_block",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.CHERRY_WOOD).strength(0.1f, 1.0f)));
-    
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

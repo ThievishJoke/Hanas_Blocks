@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_1",
+  "textures": {
+    "flowerbed": "hanas_blocks:block/violet_aubrieta",
+    "stem": "hanas_blocks:block/violet_aubrieta_stem"
+  }
+}

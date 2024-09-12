@@ -3,6 +3,7 @@ package hana.hanas_blocks.datagen;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.JsonElement;
 import hana.hanas_blocks.block.ModBlocks;
+import hana.hanas_blocks.block.custom.ModLampBlock;
 import hana.hanas_blocks.util.TrimHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -65,6 +66,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(DEEPSLATE_PEARLARIUM_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_ALLOY_SHEET_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(RAW_PEARLARIUM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_CRYSTAL_BLOCK);
         BlockStateModelGenerator.BlockTexturePool pearlarium_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(PEARLARIUM_BLOCK);
         pearlarium_Pool.slab(PEARLARIUM_SLAB);
@@ -73,15 +75,27 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTrapdoor(PEARLARIUM_TRAPDOOR);
         blockStateModelGenerator.registerTrapdoor(NIGRUM_PETRAMIUNIUM_TRAPDOOR);
 
+        Identifier pearllampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PEARLARIUM_LAMP, blockStateModelGenerator.modelCollector);
+        Identifier pearllampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.PEARLARIUM_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PEARLARIUM_LAMP)
+                .coordinate(BlockStateModelGenerator.createBooleanModelMap(ModLampBlock.CLICKED, pearllampOnIdentifier, pearllampOffIdentifier)));
+
         blockStateModelGenerator.registerSimpleCubeAll(LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(RAW_NIGRUM_PETRAMIUNIUM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK);
         BlockStateModelGenerator.BlockTexturePool nigrum_petramiumium_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(NIGRUM_PETRAMIUNIUM_BLOCK);
         nigrum_petramiumium_Pool.slab(NIGRUM_PETRAMIUNIUM_SLAB);
         nigrum_petramiumium_Pool.stairs(NIGRUM_PETRAMIUNIUM_STAIRS);
         nigrum_petramiumium_Pool.wall(NIGRUM_PETRAMIUNIUM_WALL);
+
+        Identifier nigrumpetraminiumlampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP, blockStateModelGenerator.modelCollector);
+        Identifier nigrumpetraminiumlampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP)
+                .coordinate(BlockStateModelGenerator.createBooleanModelMap(ModLampBlock.CLICKED, nigrumpetraminiumlampOnIdentifier, nigrumpetraminiumlampOffIdentifier)));
+
 
         blockStateModelGenerator.registerSimpleCubeAll(RAW_SCRAP_BLOCK);
         
@@ -154,19 +168,10 @@ public class ModModelProvider extends FabricModelProvider {
         CRACKED_ICE_BRICK
         */
 
-        //BlockStateModelGenerator.BlockTexturePool hanas_exposed_copper_sheet_block_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.EXPOSED_COPPER_SHEET_BLOCK);
-        //hanas_exposed_copper_sheet_block_Pool.slab(ModBlocks.WAXED_EXPOSED_COPPER_SHEET_BLOCK);
-        //hanas_exposed_copper_sheet_block_Pool.slab(ModBlocks.VERTICAL_EXPOSED_COPPER_SHEET_BLOCK);
-        //hanas_exposed_copper_sheet_block_Pool.slab(ModBlocks.DRIPSTONE_SLAB);
-        //hanas_exposed_copper_sheet_block_Pool.stairs(ModBlocks.DRIPSTONE_STAIRS);
-        //hanas_exposed_copper_sheet_block_Pool.wall(ModBlocks.DRIPSTONE_WALL);
-
         BlockStateModelGenerator.BlockTexturePool hanas_dripstone_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DRIPSTONE_BLOCK);
         hanas_dripstone_Pool.slab(DRIPSTONE_SLAB);
         hanas_dripstone_Pool.stairs(DRIPSTONE_STAIRS);
         hanas_dripstone_Pool.wall(DRIPSTONE_WALL);
-
-
 
         BlockStateModelGenerator.BlockTexturePool hanas_stone_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.STONE);
         hanas_stone_Pool.wall(STONE_WALL);
@@ -355,9 +360,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoubleBlock(FOUNTAIN_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(FOXGLOVE, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        //blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.HOSTA, ModBlocks.POTTED_HOSTA, BlockStateModelGenerator.TintType.NOT_TINTED);
-
-        //blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLET_AUBRIETA);
+        blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLET_AUBRIETA);
         
         blockStateModelGenerator.registerFlowerPotPlant(SCULK_TENDRIL, POTTED_SCULK_TENDRIL, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(SCULK_ROSE, POTTED_SCULK_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
@@ -373,6 +376,12 @@ public class ModModelProvider extends FabricModelProvider {
         mahogany_Pool.stairs(MAHOGANY_STAIRS);
         mahogany_Pool.fence(MAHOGANY_FENCE);
         mahogany_Pool.fenceGate(MAHOGANY_FENCE_GATE);
+
+        mahogany_Pool.button(ModBlocks.MAHOGANY_BUTTON);
+        mahogany_Pool.pressurePlate(ModBlocks.MAHOGANY_PLATE);
+
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.MAHOGANY_TRAPDOOR);
+        blockStateModelGenerator.registerDoor(ModBlocks.MAHOGANY_DOOR);
 
         blockStateModelGenerator.registerSingleton(MAHOGANY_LEAVES, TexturedModel.LEAVES);
     }
@@ -441,10 +450,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TOMATO_BREAD, Models.GENERATED);
         itemModelGenerator.register(ModItems.BUNS, Models.GENERATED);
         itemModelGenerator.register(ModItems.HAMBURGER, Models.GENERATED);
-
-        //for (Item item : TrimHelper.SMITHING_TEMPLATES) {
-        //    itemModelGenerator.register(item, Models.GENERATED);
-        //}
 
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_CHESTPLATE));

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "nigrum_petramiunium",
+  "ingredient": {
+    "item": "hanas_blocks:deepslate_nigrum_petramiunium_ore"
+  },
+  "result": {
+    "id": "hanas_blocks:nigrum_petramiunium_crystal"
+  }
+}

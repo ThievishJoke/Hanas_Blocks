@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "pearlarium",
+  "ingredient": {
+    "item": "hanas_blocks:raw_pearlarium"
+  },
+  "result": {
+    "id": "hanas_blocks:pearlarium_crystal"
+  }
+}

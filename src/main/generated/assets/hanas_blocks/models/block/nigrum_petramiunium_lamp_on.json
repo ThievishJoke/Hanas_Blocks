@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "hanas_blocks:block/nigrum_petramiunium_lamp_on"
+  }
+}

@@ -97,8 +97,8 @@ public class HanasBlocksClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FOUNTAIN_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FOXGLOVE,RenderLayer.getCutout());
 
-        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLET_AUBRIETA, RenderLayer.getCutout());
-        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_VIOLET_AUBRIETA, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLET_AUBRIETA, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_VIOLET_AUBRIETA, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SCULK_TENDRIL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_SCULK_TENDRIL, RenderLayer.getCutout());

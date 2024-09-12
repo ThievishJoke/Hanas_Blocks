@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "hanas_blocks:block/mahogany_planks"
+  }
+}

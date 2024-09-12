@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "hanas_blocks:block/nigrum_petramiunium_lamp"
+    },
+    "clicked=true": {
+      "model": "hanas_blocks:block/nigrum_petramiunium_lamp_on"
+    }
+  }
+}

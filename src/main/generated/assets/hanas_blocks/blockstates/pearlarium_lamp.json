@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "hanas_blocks:block/pearlarium_lamp"
+    },
+    "clicked=true": {
+      "model": "hanas_blocks:block/pearlarium_lamp_on"
+    }
+  }
+}

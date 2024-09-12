@@ -3,21 +3,15 @@ package hana.hanas_blocks;
 
 import hana.hanas_blocks.fluid.ModFluids;
 import net.fabricmc.api.ModInitializer;
-//import net.fabricmc.fabric.api.client.networking.v1.C2SConfigurationChannelEvents.Register;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import hana.hanas_blocks.block.ModBlocks;
-//import hana.hanas_blocks.block.entity.ModBlockEntities;
 import hana.hanas_blocks.enchantment.ModEnchantments;
-//import hana.hanas_blocks.entity.ModEntities;
-//import hana.hanas_blocks.entity.custom.DeerEntity;
 import hana.hanas_blocks.item.ModItemGroups;
 import hana.hanas_blocks.item.ModItems;
 import hana.hanas_blocks.recipe.ModRecipes;
-//import hana.hanas_blocks.screen.ModScreenHandlers;
 import hana.hanas_blocks.world.gen.ModWorldGeneration;
 
 import org.slf4j.Logger;
@@ -33,12 +27,12 @@ public class HanasBlocks implements ModInitializer {
       
       ModItems.registerModItems();
       ModBlocks.registerModBlocks();
-      
+
       ModEnchantments.registerModEnchantments();
       //ModBlockEntities.registerBlockEntities();
       //ModScreenHandlers.registerScreenHandlers();
       ModRecipes.registerRecipes();
-      
+
       FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CHARCOAL_BLOCK, 5, 90);
       FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.POWDER_KEG, 5, 20);
       FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BURNING_BLAZE_POWDERED_BLOCK, 30, 120);
@@ -93,7 +87,7 @@ public class HanasBlocks implements ModInitializer {
       OxidizableBlocksRegistry.registerWaxableBlockPair(ModBlocks.RUINED_ANCIENT_NETHERITE_BRICK_WALL, ModBlocks.SEALED_RUINED_ANCIENT_NETHERITE_BRICK_WALL);
 
 
-            FuelRegistry.INSTANCE.add(ModBlocks.CHARCOAL_BLOCK, 16000);
+      FuelRegistry.INSTANCE.add(ModBlocks.CHARCOAL_BLOCK, 16000);
       FuelRegistry.INSTANCE.add(ModBlocks.BURNING_BLAZE_POWDERED_BLOCK, 24000);
       //FabricDefaultAttributeRegistry.register(ModEntities.DEER, DeerEntity.createDeerAttributes());
       
@@ -104,7 +98,7 @@ public class HanasBlocks implements ModInitializer {
 
       ModWorldGeneration.generateModWorldGen();
 
-      //todo readd mixin
+      //todo re-add mixin
       //      "mixins": [
       //      "ExampleMixin",
       //      "ench.enchantment.CrossbowItemMixin"
