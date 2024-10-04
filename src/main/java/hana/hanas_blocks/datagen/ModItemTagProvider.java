@@ -33,9 +33,41 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(ModBlocks.STRIPPED_MAHOGANY_LOG.asItem())
             .add(ModBlocks.STRIPPED_MAHOGANY_WOOD.asItem());
 
-        //for (Item item : TrimHelper.SMITHING_TEMPLATES) {
-        //    getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES).add(item);
-        //}
+        //getOrCreateTagBuilder(ItemTags.SWORDS)
+        //        .add(ModItems.PINK_GARNET_SWORD);
+        //getOrCreateTagBuilder(ItemTags.PICKAXES)
+        //        .add(ModItems.PINK_GARNET_PICKAXE);
+        //getOrCreateTagBuilder(ItemTags.SHOVELS)
+        //        .add(ModItems.PINK_GARNET_SHOVEL);
+        //getOrCreateTagBuilder(ItemTags.AXES)
+        //        .add(ModItems.PINK_GARNET_AXE);
+        //getOrCreateTagBuilder(ItemTags.HOES)
+        //        .add(ModItems.PINK_GARNET_HOE);
+
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.PEARLARIUM_HELMET)
+                .add(ModItems.PEARLARIUM_CHESTPLATE)
+                .add(ModItems.PEARLARIUM_LEGGINGS)
+                .add(ModItems.PEARLARIUM_BOOTS)
+                .add(ModItems.PEARLARIUM_PLATE_HELMET)
+                .add(ModItems.PEARLARIUM_PLATE_CHESTPLATE)
+                .add(ModItems.PEARLARIUM_PLATE_LEGGINGS)
+                .add(ModItems.PEARLARIUM_PLATE_BOOTS)
+                .add(ModItems.NIGRUM_PETRAMINIUM_HELMET)
+                .add(ModItems.NIGRUM_PETRAMINIUM_CHESTPLATE)
+                .add(ModItems.NIGRUM_PETRAMINIUM_LEGGINGS)
+                .add(ModItems.NIGRUM_PETRAMINIUM_BOOTS)
+                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET)
+                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE)
+                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS)
+                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
+
+        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.PEARLARIUM_ALLOY_INGOT);
+
+        getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE);
+
 
     }
 }

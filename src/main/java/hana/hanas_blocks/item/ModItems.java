@@ -14,6 +14,7 @@ import net.minecraft.item.trim.ArmorTrimPatterns;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlag;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
@@ -84,8 +85,8 @@ public class ModItems {
     public static final Item SCULK_MATERIAL = registerItem("sculk_material", new Item(new Item.Settings().rarity(Rarity.COMMON)));
 
     //trims
-    //public static final SmithingTemplateItem SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE = (SmithingTemplateItem) registerItem("shock_armor_trim_smithing_template",
-    //        (Item)SmithingTemplateItem.of(ModArmorTrimPatterns.SHOCK, new FeatureFlag[0]));
+    public static final Item SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE = registerItem("shock_armor_trim_smithing_template",
+            SmithingTemplateItem.of(Identifier.of(HanasBlocks.MOD_ID), FeatureFlags.VANILLA));
 
     //eatables
     public static final Item TOMATO = registerItem("tomato", new Item(new Item.Settings().food(ModFoodComponents.Tomato)));

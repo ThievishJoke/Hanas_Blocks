@@ -102,6 +102,8 @@ public class ModItemGroups {
                     entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS);
                     entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
 
+                    entries.add(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE);
+
                     entries.add(ModBlocks.ACACIA_PLANK_BOOKSHELF);
                     entries.add(ModBlocks.OAK_PLANK_BOOKSHELF);
                     entries.add(ModBlocks.BIRCH_PLANK_BOOKSHELF);

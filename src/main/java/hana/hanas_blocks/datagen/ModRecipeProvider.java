@@ -1,5 +1,6 @@
 package hana.hanas_blocks.datagen;
 
+import hana.hanas_blocks.HanasBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import hana.hanas_blocks.block.ModBlocks;
@@ -13,6 +14,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.util.Identifier;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -44,6 +46,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, NIGRUM_PETRAMIUNIUM_SMELTABLES, RecipeCategory.MISC, ModItems.NIGRUM_PETRAMIUNIUM_CRYSTAL,
                 0.7f, 100, "nigrum_petramiunium");
 
+        offerSmithingTrimRecipe(exporter, ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE, Identifier.of(HanasBlocks.MOD_ID, "hanas_blocks"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.DECORATIONS,
                 ModBlocks.CHARCOAL_BLOCK);

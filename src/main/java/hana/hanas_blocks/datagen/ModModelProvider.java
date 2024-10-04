@@ -451,6 +451,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BUNS, Models.GENERATED);
         itemModelGenerator.register(ModItems.HAMBURGER, Models.GENERATED);
 
+        //itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.PINK_GARNET_AXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
+
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_LEGGINGS));
@@ -468,6 +474,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS));
+
+        itemModelGenerator.register(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
 
     }
 }
