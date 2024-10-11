@@ -1,8 +1,0 @@
-{
-  "asset_id": "hanas_blocks:shock",
-  "decal": false,
-  "description": {
-    "translate": "trim_pattern.hanas_blocks.shock"
-  },
-  "template_item": "hanas_blocks:shock_armor_trim_smithing_template"
-}
