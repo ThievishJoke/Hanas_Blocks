@@ -1,0 +1,9 @@
+{
+  "asset_name": "pearlarium",
+  "description": {
+    "color": "#B03FE0",
+    "translate": "trim_material.hanas_blocks.pearlarium"
+  },
+  "ingredient": "hanas_blocks:pearlarium_alloy_ingot",
+  "item_model_index": 1.0
+}
