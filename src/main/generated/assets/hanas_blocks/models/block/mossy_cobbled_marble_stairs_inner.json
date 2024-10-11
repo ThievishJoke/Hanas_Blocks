@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "hanas_blocks:block/mossy_cobbled_marble",
-    "side": "hanas_blocks:block/mossy_cobbled_marble",
-    "top": "hanas_blocks:block/mossy_cobbled_marble"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "hanas_blocks:block/sandstone_tiles",
-    "side": "hanas_blocks:block/sandstone_tiles",
-    "top": "hanas_blocks:block/sandstone_tiles"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "hanas_blocks:block/mossy_diorite",
-    "side": "hanas_blocks:block/mossy_diorite",
-    "top": "hanas_blocks:block/mossy_diorite"
-  }
-}

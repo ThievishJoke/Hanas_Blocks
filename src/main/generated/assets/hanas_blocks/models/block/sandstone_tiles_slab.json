@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "hanas_blocks:block/sandstone_tiles",
-    "side": "hanas_blocks:block/sandstone_tiles",
-    "top": "hanas_blocks:block/sandstone_tiles"
-  }
-}

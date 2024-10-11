@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_wall_side",
-  "textures": {
-    "wall": "hanas_blocks:block/dull_ancient_netherite_brick"
-  }
-}

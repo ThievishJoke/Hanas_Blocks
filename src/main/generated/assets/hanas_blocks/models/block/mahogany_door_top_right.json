@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_right",
-  "textures": {
-    "bottom": "hanas_blocks:block/mahogany_door_bottom",
-    "top": "hanas_blocks:block/mahogany_door_top"
-  }
-}
