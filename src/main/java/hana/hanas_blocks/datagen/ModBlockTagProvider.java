@@ -20,6 +20,65 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        getOrCreateTagBuilder(ModTags.Blocks.WEAPON_EFFICIENT)
+                .add(Blocks.COBWEB)
+                //.addTag(BlockTags.SWORD_EFFICIENT)
+                //.addTag(BlockTags.SAPLINGS)
+                //.addTag(BlockTags.SMALL_FLOWERS)
+                //.addTag(BlockTags.CROPS)
+                .add(
+                        Blocks.SHORT_GRASS,
+                        Blocks.FERN,
+                        Blocks.DEAD_BUSH,
+                        Blocks.VINE,
+                        Blocks.GLOW_LICHEN,
+                        Blocks.SUNFLOWER,
+                        Blocks.LILAC,
+                        Blocks.ROSE_BUSH,
+                        Blocks.PEONY,
+                        Blocks.TALL_GRASS,
+                        Blocks.LARGE_FERN,
+                        Blocks.HANGING_ROOTS,
+                        Blocks.PITCHER_PLANT
+                )
+                .add(
+                        Blocks.BROWN_MUSHROOM,
+                        Blocks.RED_MUSHROOM,
+                        Blocks.SUGAR_CANE,
+                        Blocks.PUMPKIN,
+                        Blocks.CARVED_PUMPKIN,
+                        Blocks.JACK_O_LANTERN,
+                        Blocks.MELON,
+                        Blocks.ATTACHED_PUMPKIN_STEM,
+                        Blocks.ATTACHED_MELON_STEM,
+                        Blocks.LILY_PAD,
+                        Blocks.COCOA,
+                        Blocks.PITCHER_CROP,
+                        Blocks.SWEET_BERRY_BUSH,
+                        Blocks.CAVE_VINES,
+                        Blocks.CAVE_VINES_PLANT,
+                        Blocks.SPORE_BLOSSOM,
+                        Blocks.MOSS_CARPET,
+                        Blocks.PINK_PETALS,
+                        Blocks.BIG_DRIPLEAF,
+                        Blocks.BIG_DRIPLEAF_STEM,
+                        Blocks.SMALL_DRIPLEAF
+                )
+                .add(
+                        Blocks.NETHER_WART,
+                        Blocks.WARPED_FUNGUS,
+                        Blocks.WARPED_ROOTS,
+                        Blocks.NETHER_SPROUTS,
+                        Blocks.CRIMSON_FUNGUS,
+                        Blocks.WEEPING_VINES,
+                        Blocks.WEEPING_VINES_PLANT,
+                        Blocks.TWISTING_VINES,
+                        Blocks.TWISTING_VINES_PLANT,
+                        Blocks.CRIMSON_ROOTS
+                )
+                .add(
+                        Blocks.CHORUS_PLANT,
+                        Blocks.CHORUS_FLOWER);
         getOrCreateTagBuilder(ModTags.Blocks.SCULK_PLANTABLE_BLOCKS)
             .add(Blocks.SCULK)
             .add(Blocks.SCULK_CATALYST)
@@ -469,5 +528,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.CRIMSON_PLANK_BOOKSHELF)
             .add(ModBlocks.MAHOGANY_PLANK_BOOKSHELF)
         ;
+        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_PEARLARIUM_TOOL)
+            .add(ModBlocks.ANCIENT_NETHERITE_BRICK);
+        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_NIGRUM_PETRAMIUNIUM_TOOL)
+                .add(ModBlocks.ANCIENT_NETHERITE_BRICK);
     }
 }

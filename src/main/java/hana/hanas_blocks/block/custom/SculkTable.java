@@ -1,5 +1,11 @@
 package hana.hanas_blocks.block.custom;
 
+import com.mojang.serialization.MapCodec;
+import hana.hanas_blocks.block.entity.ModBlockEntities;
+import hana.hanas_blocks.block.entity.SculkTableEntity;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ItemActionResult;
 import org.jetbrains.annotations.Nullable;
 
 //import hana.hanas_blocks.block.entity.ModBlockEntities;
@@ -22,12 +28,17 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-/*
 public class SculkTable extends BlockWithEntity{
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 16);
+    public static final MapCodec<SculkTable> CODEC = createCodec(SculkTable::new);
 
     public SculkTable(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     @Override
@@ -50,7 +61,7 @@ public class SculkTable extends BlockWithEntity{
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof SculkTableEntity) {
-                ItemScatterer.spawn(world, pos, (SculkTableEntity)blockEntity);
+                ItemScatterer.spawn(world, pos, (Inventory) blockEntity);
                 world.updateComparators(pos, this);
             }
         }
@@ -58,8 +69,7 @@ public class SculkTable extends BlockWithEntity{
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand,
-            BlockHitResult hit) {
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
             NamedScreenHandlerFactory screenHandlerFactory = ((SculkTableEntity) world.getBlockEntity(pos));
 
@@ -67,8 +77,7 @@ public class SculkTable extends BlockWithEntity{
                 player.openHandledScreen(screenHandlerFactory);
             }
         }
-
-        return ActionResult.SUCCESS;
+        return ItemActionResult.SUCCESS;
     }
 
     @Override
@@ -77,4 +86,3 @@ public class SculkTable extends BlockWithEntity{
             (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }
-*/

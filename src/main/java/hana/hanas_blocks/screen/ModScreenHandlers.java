@@ -6,15 +6,15 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 
-/*
+
 public class ModScreenHandlers {
     public static final ScreenHandlerType<SculkTableScreenHandler> SCULK_TABLE_HANDLER =
-        Registry.register(Registries.SCREEN_HANDLER, new Identifier(HanasBlocks.MOD_ID, "sculk_table"),
-            new ExtendedScreenHandlerType<>(SculkTableScreenHandler::new));
+        Registry.register(Registries.SCREEN_HANDLER, Identifier.of(HanasBlocks.MOD_ID, "sculk_table"),
+            new ExtendedScreenHandlerType<>(SculkTableScreenHandler::new, BlockPos.PACKET_CODEC));
 
     public static void registerScreenHandlers() {
         HanasBlocks.LOGGER.info("Registering Screen Handlers for " + HanasBlocks.MOD_ID);
     }
 }
-*/

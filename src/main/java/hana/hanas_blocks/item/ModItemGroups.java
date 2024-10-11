@@ -52,7 +52,6 @@ public class ModItemGroups {
                     entries.add(ModItems.NON_BINARY_BLAHAJ);
                     entries.add(ModItems.POLYGENDER_BLAHAJ);
                     entries.add(ModItems.LESBIAN_BLAHAJ);
-                    entries.add(ModItems.LONG_BACON_BLAHAJ);
                     entries.add(ModItems.GAY_BLAHAJ);
                     entries.add(ModItems.PANSEXUAL_BLAHAJ);
                     entries.add(ModItems.BISEXUAL_BLAHAJ);
@@ -86,23 +85,52 @@ public class ModItemGroups {
                     entries.add(ModItems.PEARLARIUM_CHESTPLATE);
                     entries.add(ModItems.PEARLARIUM_LEGGINGS);
                     entries.add(ModItems.PEARLARIUM_BOOTS);
-                    entries.add(ModItems.PEARLARIUM_PLATE_HELMET);
-                    entries.add(ModItems.PEARLARIUM_PLATE_CHESTPLATE);
-                    entries.add(ModItems.PEARLARIUM_PLATE_LEGGINGS);
-                    entries.add(ModItems.PEARLARIUM_PLATE_BOOTS);
+                    //entries.add(ModItems.PEARLARIUM_PLATE_HELMET);
+                    //entries.add(ModItems.PEARLARIUM_PLATE_CHESTPLATE);
+                    //entries.add(ModItems.PEARLARIUM_PLATE_LEGGINGS);
+                    //entries.add(ModItems.PEARLARIUM_PLATE_BOOTS);
 
-                    entries.add(ModItems.PEARLARIUM_PLATED_SHIELD);
+                    //entries.add(ModItems.PEARLARIUM_PLATED_SHIELD);
 
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_HELMET);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_CHESTPLATE);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_LEGGINGS);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_BOOTS);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS);
-                    entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
+                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_HELMET);
+                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_CHESTPLATE);
+                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_LEGGINGS);
+                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_BOOTS);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
 
-                    entries.add(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_SWORD);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_SWORD);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SWORD);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SWORD);
+
+                    entries.add(ModItems.PEARLARIUM_ALLOY_LONGSWORD);
+
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PICKAXE);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_PICKAXE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PICKAXE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_PICKAXE);
+
+                    entries.add(ModItems.PEARLARIUM_ALLOY_SHOVEL);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_SHOVEL);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SHOVEL);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SHOVEL);
+
+                    entries.add(ModItems.PEARLARIUM_ALLOY_AXE);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_AXE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_AXE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_AXE);
+
+                    entries.add(ModItems.PEARLARIUM_ALLOY_HOE);
+                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_HOE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_HOE);
+                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_HOE);
+
+                    entries.add(ModItems.PEARLARIUM_HORSE_ARMOR);
+
+                    entries.add(ModItems.SHOCK_SMITHING_TEMPLATE);
 
                     entries.add(ModBlocks.ACACIA_PLANK_BOOKSHELF);
                     entries.add(ModBlocks.OAK_PLANK_BOOKSHELF);

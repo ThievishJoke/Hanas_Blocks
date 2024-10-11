@@ -1,26 +1,15 @@
 package hana.hanas_blocks.datagen;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.gson.JsonElement;
 import hana.hanas_blocks.block.ModBlocks;
 import hana.hanas_blocks.block.custom.ModLampBlock;
-import hana.hanas_blocks.util.TrimHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 
 import hana.hanas_blocks.item.ModItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 import static hana.hanas_blocks.block.ModBlocks.*;
 
@@ -418,7 +407,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NON_BINARY_BLAHAJ, Models.GENERATED);
         itemModelGenerator.register(ModItems.POLYGENDER_BLAHAJ, Models.GENERATED);
         itemModelGenerator.register(ModItems.LESBIAN_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LONG_BACON_BLAHAJ, Models.GENERATED);
         itemModelGenerator.register(ModItems.GAY_BLAHAJ, Models.GENERATED);
         itemModelGenerator.register(ModItems.PANSEXUAL_BLAHAJ, Models.GENERATED);
         itemModelGenerator.register(ModItems.BISEXUAL_BLAHAJ, Models.GENERATED);
@@ -442,7 +430,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_CRYSTAL, Models.GENERATED);
         itemModelGenerator.register(ModItems.CRUSHED_NIGRUM_PETRAMIUNIUM, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.PEARLARIUM_PLATED_SHIELD, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.PEARLARIUM_PLATED_SHIELD, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.SCULK_MATERIAL, Models.GENERATED);
 
@@ -451,31 +439,53 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.BUNS, Models.GENERATED);
         itemModelGenerator.register(ModItems.HAMBURGER, Models.GENERATED);
 
-        //itemModelGenerator.register(ModItems.PINK_GARNET_SWORD, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.PINK_GARNET_PICKAXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.PINK_GARNET_SHOVEL, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.PINK_GARNET_AXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.PINK_GARNET_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_LONGSWORD, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_HOE, Models.HANDHELD);
+
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SWORD, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PICKAXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SHOVEL, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_AXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_HOE, Models.HANDHELD);
+
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SWORD, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_PICKAXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SHOVEL, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_AXE, Models.HANDHELD);
+        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_HOE, Models.HANDHELD);
 
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_BOOTS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_BOOTS));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_HELMET));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_CHESTPLATE));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_LEGGINGS));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_BOOTS));
 
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_BOOTS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_BOOTS));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS));
+        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS));
 
-        itemModelGenerator.register(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PEARLARIUM_HORSE_ARMOR, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.SHOCK_SMITHING_TEMPLATE, Models.GENERATED);
 
     }
 }

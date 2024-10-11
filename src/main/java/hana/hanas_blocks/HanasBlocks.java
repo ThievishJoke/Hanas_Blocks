@@ -1,7 +1,10 @@
 package hana.hanas_blocks;
 
 
+import hana.hanas_blocks.block.entity.ModBlockEntities;
 import hana.hanas_blocks.fluid.ModFluids;
+import hana.hanas_blocks.screen.ModScreenHandlers;
+import hana.hanas_blocks.util.ModAttributes;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -29,9 +32,10 @@ public class HanasBlocks implements ModInitializer {
       ModBlocks.registerModBlocks();
 
       ModEnchantments.registerModEnchantments();
-      //ModBlockEntities.registerBlockEntities();
-      //ModScreenHandlers.registerScreenHandlers();
+      ModBlockEntities.registerBlockEntities();
+      ModScreenHandlers.registerScreenHandlers();
       ModRecipes.registerRecipes();
+      ModAttributes.registerAttributes();
 
       FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CHARCOAL_BLOCK, 5, 90);
       FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.POWDER_KEG, 5, 20);
@@ -98,10 +102,5 @@ public class HanasBlocks implements ModInitializer {
 
       ModWorldGeneration.generateModWorldGen();
 
-      //todo re-add mixin
-      //      "mixins": [
-      //      "ExampleMixin",
-      //      "ench.enchantment.CrossbowItemMixin"
-      //],
   }
 }

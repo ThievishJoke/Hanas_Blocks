@@ -2,10 +2,13 @@ package hana.hanas_blocks.recipe;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryWrapper;
@@ -15,34 +18,25 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-/*
-
-public class SculkTableRecipe implements Recipe<SimpleInventory> {
-    private final ItemStack output;
-    private final List<Ingredient> recipeItems;
-
-    public SculkTableRecipe(List<Ingredient> ingredients, ItemStack itemStack) {
-        this.output = itemStack;
-        this.recipeItems = ingredients;
+public record SculkTableRecipe(List<Ingredient> inputItems, ItemStack output, int count, float experience, int cookingTime) implements Recipe<SculkTableRecipeInput> {
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        return (DefaultedList<Ingredient>) inputItems; // Return the DefaultedList directly
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
+    public boolean matches(SculkTableRecipeInput input, World world) {
+        if (world.isClient()) {
             return false;
         }
 
-        return recipeItems.get(0).test(inventory.getStack(0));
+        // Check if all ingredients match
+        return inputItems.stream().allMatch(ingredient -> ingredient.test(input.getStackInSlot(0)));
     }
 
     @Override
-    public ItemStack craft(SimpleInventory input, RegistryWrapper.WrapperLookup lookup) {
-        return null;
-    }
-
-    @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-        return output;
+    public ItemStack craft(SculkTableRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
+        return output.copy();
     }
 
     @Override
@@ -52,86 +46,16 @@ public class SculkTableRecipe implements Recipe<SimpleInventory> {
 
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
-        return null;
-    }
-
-    @Override
-    public ItemStack getResult(DynamicRegistryManager registryManager) {
         return output;
     }
 
     @Override
-    public DefaultedList<Ingredient> getIngredients() {
-        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
-        list.addAll(recipeItems);
-        return list;
-    }
-
-    @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
-    }
-
-    @Override
-    public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return ModRecipes.SCULK_TABLE_SERIALIZER;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
-    }
-
-    public static class Type implements RecipeType<SculkTableRecipe> {
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "material_sculking";
-    }
-
-    public static class Serializer implements RecipeSerializer<SculkTableRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "material_sckulking";
-
-
-        public static final Codec<SculkTableRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
-                validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(SculkTableRecipe::getIngredients),
-                RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
-        ).apply(in, SculkTableRecipe::new));
-
-        private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
-            return Codecs.validate(Codecs.validate(
-                    delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
-            ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
-        }
-
-
-        @Override
-        public Codec<SculkTableRecipe> codec() {
-            return CODEC;
-        }
-
-        @Override
-        public SculkTableRecipe read(PacketByteBuf buf) {
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-
-            for(int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromPacket(buf));
-            }
-
-            ItemStack output = buf.readItemStack();
-            return new SculkTableRecipe(inputs, output);
-        }
-
-        @Override
-        public void write(PacketByteBuf buf, SculkTableRecipe recipe) {
-            buf.writeInt(recipe.getIngredients().size());
-
-            for (Ingredient ingredient : recipe.getIngredients()) {
-                ingredient.write(buf);
-            }
-
-            buf.writeItemStack(recipe.getResult(null));
-        }
-
+        return ModRecipes.SCULK_TABLE_TYPE;
     }
 }
-*/

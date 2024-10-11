@@ -1,12 +1,17 @@
 {
     "type": "hanas_blocks:material_sckulking",
-    "ingredient_1": {
-        "item": "minecraft:iron_ingot"
-    },
-    "ingredient_2": {
-        "item": "hanas_blocks:crushed_nigrum_petramiunium"
-    },
-    "output": {
+    "ingredients": [
+        {
+            "item": "hanas_blocks:crushed_nigrum_petramiunium"
+        },
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    ],
+    "result": {
         "item": "hanas_blocks:nigrum_petramiunium_alloy_ingot"
-    }
+    },
+    "count": 1,
+    "experience": 0.1,
+    "cookingtime": 200
 }

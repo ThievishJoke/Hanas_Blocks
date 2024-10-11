@@ -46,7 +46,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, NIGRUM_PETRAMIUNIUM_SMELTABLES, RecipeCategory.MISC, ModItems.NIGRUM_PETRAMIUNIUM_CRYSTAL,
                 0.7f, 100, "nigrum_petramiunium");
 
-        offerSmithingTrimRecipe(exporter, ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE, Identifier.of(HanasBlocks.MOD_ID, "hanas_blocks"));
+        offerSmithingTrimRecipe(exporter, ModItems.SHOCK_SMITHING_TEMPLATE, Identifier.of(HanasBlocks.MOD_ID, "hanas_blocks"));
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, Items.CHARCOAL, RecipeCategory.DECORATIONS,
                 ModBlocks.CHARCOAL_BLOCK);

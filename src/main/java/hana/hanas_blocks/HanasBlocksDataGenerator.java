@@ -1,5 +1,8 @@
 package hana.hanas_blocks;
 
+import hana.hanas_blocks.enchantment.ModEnchantments;
+import hana.hanas_blocks.trim.ModTrimMaterials;
+import hana.hanas_blocks.trim.ModTrimPatterns;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -24,10 +27,14 @@ public class HanasBlocksDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModFluidTagProvider::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModRegistryDataGenerator::new);
 	}
 
 	@Override
 	public void buildRegistry(@NotNull RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}

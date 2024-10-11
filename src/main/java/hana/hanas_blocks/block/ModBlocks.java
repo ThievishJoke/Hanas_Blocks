@@ -100,6 +100,9 @@ public class ModBlocks {
             new ModLampBlock(AbstractBlock.Settings.create()
                     .strength(1f).requiresTool().luminance(state -> state.get(ModLampBlock.CLICKED) ? 15 : 0)));
 
+    public static final Block SCULK_TABLE = registerBlock("sculk_table",
+            new SculkTable(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
+
     //Scrap & Netherite
     public static final Block RAW_SCRAP_BLOCK = registerBlock("raw_scrap_block",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.NETHERITE).strength(4.0f, 1200.0f).requiresTool()));

@@ -10,7 +10,6 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-/*
 public class SculkTableScreen extends HandledScreen<SculkTableScreenHandler> {
     private static final Identifier TEXTURE = Identifier.of(HanasBlocks.MOD_ID, "textures/gui/sculk_table_gui.png");
 
@@ -51,5 +50,4 @@ public class SculkTableScreen extends HandledScreen<SculkTableScreenHandler> {
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
 }
-*/
 

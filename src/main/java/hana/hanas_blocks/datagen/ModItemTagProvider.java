@@ -1,10 +1,10 @@
 package hana.hanas_blocks.datagen;
 
 import hana.hanas_blocks.item.ModItems;
-import hana.hanas_blocks.util.TrimHelper;
+import hana.hanas_blocks.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -19,54 +19,79 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        /*
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.PEARLARIUM_PLATE_HELMET, ModItems.PEARLARIUM_PLATE_CHESTPLATE, ModItems.PEARLARIUM_PLATE_LEGGINGS, ModItems.PEARLARIUM_PLATE_BOOTS);
-        */
+        getOrCreateTagBuilder(ModTags.Items.MATERIAL_DUST)
+                .add(ModItems.CRUSHED_PEARLARIUM.asItem())
+                .add(ModItems.CRUSHED_NIGRUM_PETRAMIUNIUM.asItem())
+        ;
+
+        getOrCreateTagBuilder(ModTags.Items.ALLOY_MATERIAL)
+                .add(Items.IRON_INGOT.asItem());
+        ;
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
-            .add(ModBlocks.MAHOGANY_PLANKS.asItem());
+                .add(ModBlocks.MAHOGANY_PLANKS.asItem());
         
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
-            .add(ModBlocks.MAHOGANY_LOG.asItem())
-            .add(ModBlocks.MAHOGANY_WOOD.asItem())
-            .add(ModBlocks.STRIPPED_MAHOGANY_LOG.asItem())
-            .add(ModBlocks.STRIPPED_MAHOGANY_WOOD.asItem());
+                .add(ModBlocks.MAHOGANY_LOG.asItem())
+                .add(ModBlocks.MAHOGANY_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_MAHOGANY_LOG.asItem())
+                .add(ModBlocks.STRIPPED_MAHOGANY_WOOD.asItem());
 
-        //getOrCreateTagBuilder(ItemTags.SWORDS)
-        //        .add(ModItems.PINK_GARNET_SWORD);
-        //getOrCreateTagBuilder(ItemTags.PICKAXES)
-        //        .add(ModItems.PINK_GARNET_PICKAXE);
-        //getOrCreateTagBuilder(ItemTags.SHOVELS)
-        //        .add(ModItems.PINK_GARNET_SHOVEL);
-        //getOrCreateTagBuilder(ItemTags.AXES)
-        //        .add(ModItems.PINK_GARNET_AXE);
-        //getOrCreateTagBuilder(ItemTags.HOES)
-        //        .add(ModItems.PINK_GARNET_HOE);
+        getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(ModItems.PEARLARIUM_ALLOY_SWORD)
+                .add(ModItems.PEARLARIUM_ALLOY_PLATE_SWORD)
+                .add(ModItems.PEARLARIUM_ALLOY_LONGSWORD)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SWORD)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SWORD);
+        ;
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(ModItems.PEARLARIUM_ALLOY_PICKAXE)
+                .add(ModItems.PEARLARIUM_ALLOY_PLATE_PICKAXE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PICKAXE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_PICKAXE);
+        ;
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(ModItems.PEARLARIUM_ALLOY_SHOVEL)
+                .add(ModItems.PEARLARIUM_ALLOY_PLATE_SHOVEL)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SHOVEL)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SHOVEL);
+        ;
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(ModItems.PEARLARIUM_ALLOY_AXE)
+                .add(ModItems.PEARLARIUM_ALLOY_PLATE_AXE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_AXE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_AXE);
+        ;
+        getOrCreateTagBuilder(ItemTags.HOES)
+                .add(ModItems.PEARLARIUM_ALLOY_HOE)
+                .add(ModItems.PEARLARIUM_ALLOY_PLATE_HOE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_HOE)
+        //        .add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_HOE);
+        ;
 
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.PEARLARIUM_HELMET)
-                .add(ModItems.PEARLARIUM_CHESTPLATE)
-                .add(ModItems.PEARLARIUM_LEGGINGS)
-                .add(ModItems.PEARLARIUM_BOOTS)
-                .add(ModItems.PEARLARIUM_PLATE_HELMET)
-                .add(ModItems.PEARLARIUM_PLATE_CHESTPLATE)
-                .add(ModItems.PEARLARIUM_PLATE_LEGGINGS)
-                .add(ModItems.PEARLARIUM_PLATE_BOOTS)
-                .add(ModItems.NIGRUM_PETRAMINIUM_HELMET)
-                .add(ModItems.NIGRUM_PETRAMINIUM_CHESTPLATE)
-                .add(ModItems.NIGRUM_PETRAMINIUM_LEGGINGS)
-                .add(ModItems.NIGRUM_PETRAMINIUM_BOOTS)
-                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET)
-                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE)
-                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS)
-                .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
+                 .add(ModItems.PEARLARIUM_HELMET)
+                 .add(ModItems.PEARLARIUM_CHESTPLATE)
+                 .add(ModItems.PEARLARIUM_LEGGINGS)
+                 .add(ModItems.PEARLARIUM_BOOTS)
+        //         .add(ModItems.PEARLARIUM_PLATE_HELMET)
+        //         .add(ModItems.PEARLARIUM_PLATE_CHESTPLATE)
+        //         .add(ModItems.PEARLARIUM_PLATE_LEGGINGS)
+        //         .add(ModItems.PEARLARIUM_PLATE_BOOTS)
+                 .add(ModItems.NIGRUM_PETRAMIUNIUM_HELMET)
+                 .add(ModItems.NIGRUM_PETRAMIUNIUM_CHESTPLATE)
+                 .add(ModItems.NIGRUM_PETRAMIUNIUM_LEGGINGS)
+                 .add(ModItems.NIGRUM_PETRAMIUNIUM_BOOTS);
+        //         .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET)
+        //         .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE)
+        //         .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS)
+        //         .add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
-                .add(ModItems.PEARLARIUM_ALLOY_INGOT);
+                 .add(ModItems.PEARLARIUM_ALLOY_INGOT);
 
         getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
-                .add(ModItems.SHOCK_ARMOR_TRIM_SMITHING_TEMPLATE);
+                 .add(ModItems.SHOCK_SMITHING_TEMPLATE);
 
 
     }

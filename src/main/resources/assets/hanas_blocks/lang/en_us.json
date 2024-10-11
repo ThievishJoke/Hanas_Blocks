@@ -1,4 +1,5 @@
 {
+    "tag.hanas_blocks.incorrect_for_pearlarium_tool": "incorrect for pearlarium tool",
     "item.hanas_blocks.white_blahaj": "White Blåhaj",
     "item.hanas_blocks.orange_blahaj": "Orange Blåhaj",
     "item.hanas_blocks.magenta_blahaj": "Magenta Blåhaj",
@@ -49,10 +50,38 @@
     "item.hanas_blocks.nigrum_petramiunium_crystal": "Nigrum Petramiunium Crystal",
     "item.hanas_blocks.crushed_nigrum_petramiunium": "Crushed Nigrum Petramiunium",
 
-    "item.hanas_blcoks.pearlarium_plate_helmet": "Pearlarium Plate Helmet",
-    "item.hanas_blcoks.pearlarium_plate_chestplate": "Pearlarium Plate Chestplate",
-    "item.hanas_blcoks.pearlarium_plate_leggings": "Pearlarium Plate Leggings",
-    "item.hanas_blcoks.pearlarium_plate_boots": "Pearlarium Plate Boots",
+    "item.hanas_blocks.pearlarium_alloy_sword": "Pearlarium Alloy Sword",
+    "item.hanas_blocks.pearlarium_alloy_pickaxe": "Pearlarium Alloy Pickaxe",
+    "item.hanas_blocks.pearlarium_alloy_shovel": "Pearlarium Alloy Shovel",
+    "item.hanas_blocks.pearlarium_alloy_axe": "Pearlarium Alloy Axe",
+    "item.hanas_blocks.pearlarium_alloy_hoe": "Pearlarium Alloy Hoe",
+
+    "item.hanas_blocks.pearlarium_helmet": "Pearlarium Alloy Helmet",
+    "item.hanas_blocks.pearlarium_chestplate": "Pearlarium Alloy Chestplate",
+    "item.hanas_blocks.pearlarium_leggings": "Pearlarium Alloy Leggings",
+    "item.hanas_blocks.pearlarium_boots": "Pearlarium Alloy Boots",
+
+    "item.hanas_blocks.pearlarium_plate_helmet": "Pearlarium Plate Helmet",
+    "item.hanas_blocks.pearlarium_plate_chestplate": "Pearlarium Plate Chestplate",
+    "item.hanas_blocks.pearlarium_plate_leggings": "Pearlarium Plate Leggings",
+    "item.hanas_blocks.pearlarium_plate_boots": "Pearlarium Plate Boots",
+
+    "item.hanas_blocks.nigrum_petramiunium_helmet": "Nigrum Petramiunium Alloy Helmet",
+    "item.hanas_blocks.nigrum_petramiunium_chestplate": "Nigrum Petramiunium Alloy Chestplate",
+    "item.hanas_blocks.nigrum_petramiunium_leggings": "Nigrum Petramiunium Alloy Leggings",
+    "item.hanas_blocks.nigrum_petramiunium_boots": "Nigrum Petramiunium Alloy Boots",
+
+    "item.hanas_blocks.nigrum_petramiunium_plate_helmet": "Nigrum Petramiunium Plate Helmet",
+    "item.hanas_blocks.nigrum_petramiunium_plate_chestplate": "Nigrum Petramiunium Plate Chestplate",
+    "item.hanas_blocks.nigrum_petramiunium_plate_leggings": "Nigrum Petramiunium Plate Leggings",
+    "item.hanas_blocks.nigrum_petramiunium_plate_boots": "Nigrum Petramiunium Plate Boots",
+
+    "item.hanas_blocks.pearlarium_horse_armor": "Pearlarium Horse Armor",
+
+    "item.hanas_blocks.hamburger": "Hamburger",
+    "item.hanas_blocks.tomato": "Tomato",
+    "item.hanas_blocks.buns": "Buns",
+    "item.hanas_blocks.tomato_bread": "Spiced Bread",
 
     "block.hanas_blocks.acacia_plank_bookshelf": "Acacia Plank Bookshelf",
     "block.hanas_blocks.oak_plank_bookshelf": "Oak Plank Bookshelf",
@@ -340,17 +369,26 @@
     "block.hanas_blocks.stripped_mahogany_log": "Stripped Mahogany Log",
     "block.hanas_blocks.stripped_mahogany_wood": "Stripped Mahogany Wood",
     "block.hanas_blocks.mahogany_planks": "Mahogany Planks",
+    "block.hanas_blocks.mahogany_stairs": "Mahogany Stairs",
+    "block.hanas_blocks.mahogany_slab": "Mahogany Slab",
+    "block.hanas_blocks.mahogany_trapdoor": "Mahogany Trapdoor",
+    "block.hanas_blocks.mahogany_fence": "Mahogany Fense",
+    "block.hanas_blocks.mahogany_fence_gate": "Mahogany Fence Gate",
+    "block.hanas_blocks.mahogany_door": "Mahogany Door",
+    "block.hanas_blocks.mahogany_plate": "Mahogany Plate",
+    "block.hanas_blocks.mahogany_button": "Mahogany Button",
     "block.hanas_blocks.mahogany_leaves": "Mahogany Leaves",
 
     "itemgroup.hanas_stuff": "Hanas Sheet",
     "itemgroup.blahaj": "Blahaj",
-    
+
     "enchantment.hanas_blocks.lightning_striker": "Lightning Striker",
     "enchantment.hanas_blocks.frost_thorn": "Frost Thorns",
 
     "item.hanas_blocks.shock_armor_trim_smithing_template": "Smithing Template",
-    "trim_pattern.hanas_blocks.shock_armor_trim_smithing_template": "Shock Armor Trim",
+    "trim_pattern.hanas_blocks.shock": "Shock Armor Trim",
 
     "tooltip.hanas_blocks.sculk_flower_block.tooltip": "The Light Absorbing Sculk Can Grow Flora Over Time",
-    "tooltip.hanas_blocks.sculk_tendril.tooltip": "A Tendril Growing From The Sculk"
+    "tooltip.hanas_blocks.sculk_tendril.tooltip": "A Tendril Growing From The Sculk",
+    "blockentity.hanas_blockentities": "Sculking Table"
 }

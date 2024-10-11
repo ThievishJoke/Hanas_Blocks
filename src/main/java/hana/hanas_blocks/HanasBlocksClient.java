@@ -4,6 +4,8 @@ import hana.hanas_blocks.block.ModBlocks;
 import hana.hanas_blocks.fluid.ModFluids;
 //import hana.hanas_blocks.screen.ModScreenHandlers;
 //import hana.hanas_blocks.screen.SculkTableScreen;
+import hana.hanas_blocks.screen.ModScreenHandlers;
+import hana.hanas_blocks.screen.SculkTableScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
@@ -22,6 +24,12 @@ public class HanasBlocksClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_GRATE_SLAB, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_GRATE_STAIRS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.IRON_GRATE_TRAPDOOR, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAHOGANY_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MAHOGANY_TRAPDOOR, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEARLARIUM_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NIGRUM_PETRAMIUNIUM_TRAPDOOR, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GLOWING_WISTERIA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GLOWING_WISTERIA, RenderLayer.getCutout());
@@ -98,7 +106,6 @@ public class HanasBlocksClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FOXGLOVE,RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VIOLET_AUBRIETA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_VIOLET_AUBRIETA, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SCULK_TENDRIL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_SCULK_TENDRIL, RenderLayer.getCutout());
@@ -109,20 +116,18 @@ public class HanasBlocksClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GLOWING_SCULK_WISTERIA_BUNDLE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_GLOWING_SCULK_WISTERIA_BUNDLE, RenderLayer.getCutout());
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEARLARIUM_TRAPDOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.NIGRUM_PETRAMIUNIUM_TRAPDOOR, RenderLayer.getCutout());
 
-        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SCULK_TABLE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SCULK_TABLE, RenderLayer.getCutout());
 
-        FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_BLOOD, ModFluids.FLOWING_BLOOD,
-                SimpleFluidRenderHandler.coloredWater(0X0B1AE1));
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
-                ModFluids.STILL_BLOOD, ModFluids.FLOWING_BLOOD);
+        //FluidRenderHandlerRegistry.INSTANCE.register(ModFluids.STILL_BLOOD, ModFluids.FLOWING_BLOOD,
+        //        SimpleFluidRenderHandler.coloredWater(0X0B1AE1));
+        //BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(),
+        //        ModFluids.STILL_BLOOD, ModFluids.FLOWING_BLOOD);
 
         //EntityRendererRegistry.register(ModEntities.DEER, DeerRenderer::new);
         //EntityModelLayerRegistry.registerModelLayer(ModModelLayers.DEER, DeerModel::getTexturedModelData);
 
-        //HandledScreens.register(ModScreenHandlers.SCULK_TABLE_HANDLER, SculkTableScreen::new);
+        HandledScreens.register(ModScreenHandlers.SCULK_TABLE_HANDLER, SculkTableScreen::new);
 
         ColorProviderRegistry.BLOCK.register((state, world, pos, tintIndex) -> world != null && pos != null ? BiomeColors.getFoliageColor(world, pos)
                 : FoliageColors.getDefaultColor(), ModBlocks.MAHOGANY_LEAVES);
