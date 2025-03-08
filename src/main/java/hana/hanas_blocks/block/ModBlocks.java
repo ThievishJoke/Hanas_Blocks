@@ -3,7 +3,6 @@ package hana.hanas_blocks.block;
 
 import com.mojang.serialization.MapCodec;
 import hana.hanas_blocks.block.custom.*;
-
 import hana.hanas_blocks.HanasBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.Oxidizable.OxidationLevel;
@@ -21,11 +20,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 import java.util.List;
 
 import static net.minecraft.block.MapColor.*;
+import static net.minecraft.block.Blocks.*;
 
 public class ModBlocks {
 
@@ -43,65 +44,7 @@ public class ModBlocks {
                 }
             });
 
-        //Valueables & SHEETS
-    //Pearlarium
-    public static final Block LOW_QUALITY_PEARLARIUM_ORE = registerBlock("low_quality_pearlarium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(1, 7), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(2.75f, 5.0f).requiresTool()));
-    public static final Block PEARLARIUM_ORE = registerBlock("pearlarium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(7, 14), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(2.75f, 5.0f).requiresTool()));
-    public static final Block DEEPSLATE_PEARLARIUM_ORE = registerBlock("deepslate_pearlarium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block RAW_PEARLARIUM_BLOCK = registerBlock("raw_pearlarium_block",
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block PEARLARIUM_CRYSTAL_BLOCK = registerBlock("pearlarium_crystal_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block PEARLARIUM_ALLOY_SHEET_BLOCK = registerBlock("pearlarium_alloy_sheet_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block PEARLARIUM_BLOCK = registerBlock("pearlarium_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block PEARLARIUM_SLAB = registerBlock("pearlarium_slab",
-        new SlabBlock(AbstractBlock.Settings.copy(PEARLARIUM_BLOCK)));
-    public static final Block PEARLARIUM_STAIRS = registerBlock("pearlarium_stairs",
-        new StairsBlock(PEARLARIUM_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(PEARLARIUM_BLOCK)));
-    public static final Block PEARLARIUM_WALL = registerBlock("pearlarium_wall",
-        new WallBlock(AbstractBlock.Settings.copy(PEARLARIUM_BLOCK).solid()));
-    public static final Block PEARLARIUM_TRAPDOOR = registerBlock("pearlarium_trapdoor",
-        new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque()));
-
-    public static final Block PEARLARIUM_LAMP = registerBlock("pearlarium_lamp",
-            new ModLampBlock(AbstractBlock.Settings.create()
-                    .strength(1f).requiresTool().luminance(state -> state.get(ModLampBlock.CLICKED) ? 15 : 0)));
-
-    //Nigrum Petramiunium
-    public static final Block LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE = registerBlock("low_quality_nigrum_petramiunium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(1, 10), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0f, 6.0f).requiresTool()));
-    public static final Block NIGRUM_PETRAMIUNIUM_ORE = registerBlock("nigrum_petramiunium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(10, 20), AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.0f, 6.0f).requiresTool()));
-    public static final Block DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE = registerBlock("deepslate_nigrum_petramiunium_ore",
-        new ExperienceDroppingBlock(UniformIntProvider.create(15, 25), AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(4.0f, 6.0f).requiresTool()));
-    public static final Block RAW_NIGRUM_PETRAMIUNIUM_BLOCK = registerBlock("raw_nigrum_petramiunium_block",
-            new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(3.75f, 5.0f).requiresTool()));
-    public static final Block NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK = registerBlock("nigrum_petramiunium_crystal_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).strength(1.5f, 5.0f).requiresTool()));
-    public static final Block NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK = registerBlock("nigrum_petramiunium_alloy_sheet_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(1.5f, 5.0f).requiresTool()));
-    public static final Block NIGRUM_PETRAMIUNIUM_BLOCK = registerBlock("nigrum_petramiunium_block",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.STONE).strength(1.5f, 5.0f).requiresTool()));
-    public static final Block NIGRUM_PETRAMIUNIUM_SLAB = registerBlock("nigrum_petramiunium_slab",
-        new SlabBlock(AbstractBlock.Settings.copy(NIGRUM_PETRAMIUNIUM_BLOCK)));
-    public static final Block NIGRUM_PETRAMIUNIUM_STAIRS = registerBlock("nigrum_petramiunium_stairs",
-        new StairsBlock(NIGRUM_PETRAMIUNIUM_BLOCK.getDefaultState(), AbstractBlock.Settings.copy(NIGRUM_PETRAMIUNIUM_BLOCK)));
-    public static final Block NIGRUM_PETRAMIUNIUM_WALL = registerBlock("nigrum_petramiunium_wall",
-        new WallBlock(AbstractBlock.Settings.copy(NIGRUM_PETRAMIUNIUM_BLOCK).solid()));
-    public static final Block NIGRUM_PETRAMIUNIUM_TRAPDOOR = registerBlock("nigrum_petramiunium_trapdoor",
-            new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.IRON_BLOCK).nonOpaque()));
-
-    public static final Block NIGRUM_PETRAMIUNIUM_LAMP = registerBlock("nigrum_petramiunium_lamp",
-            new ModLampBlock(AbstractBlock.Settings.create()
-                    .strength(1f).requiresTool().luminance(state -> state.get(ModLampBlock.CLICKED) ? 15 : 0)));
-
-    public static final Block SCULK_TABLE = registerBlock("sculk_table",
-            new SculkTable(AbstractBlock.Settings.create().strength(2f).requiresTool().nonOpaque()));
+        // Valueables & SHEETS
 
     //Scrap & Netherite
     public static final Block RAW_SCRAP_BLOCK = registerBlock("raw_scrap_block",
@@ -293,13 +236,9 @@ public class ModBlocks {
     public static final Block CRIMSON_PLANK_BOOKSHELF = registerBlock("crimson_plank_bookshelf",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).mapColor(Blocks.CRIMSON_PLANKS.getDefaultMapColor()).strength(1.5f).burnable()));
 
-    public static final Block MAHOGANY_PLANK_BOOKSHELF = registerBlock("mahogany_plank_bookshelf",
-        new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD).mapColor(MapColor.BROWN).strength(1.5f).burnable()));
-
     //Amethyst
     public static final Block CUT_CRYSTAL_AMETHYST = registerBlock("cut_crystal_amethyst",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.AMETHYST_BLOCK).requiresTool()));
-
 
     //Sculk Blocks
     public static final Block SCULKED_DEEPSLATE = registerBlock("sculked_deepslate",
@@ -322,265 +261,6 @@ public class ModBlocks {
         new SculkBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).mapColor(MapColor.BLACK).strength(3.0f, 9.0f).requiresTool()));
     public static final Block SCULKED_POLISHED_END_STONE = registerBlock("sculked_polished_end_stone",
         new SculkBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).mapColor(MapColor.BLACK).strength(3.0f, 9.0f).requiresTool()));
-
-    //Flora
-    //wisteria
-    public static final Block GLOWING_WISTERIA = registerBlock("glowing_wisteria",
-        new FlowerBlock(StatusEffects.REGENERATION, 15, AbstractBlock.Settings.copy(Blocks.ALLIUM).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //aconite
-        public static final Block ACONITE = registerBlock("aconite",
-        new FlowerBlock(StatusEffects.HASTE, 5, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //rose
-    public static final Block RED_ROSE = registerBlock("red_rose",
-        new FlowerBlock(StatusEffects.RESISTANCE, 5, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block YELLOW_ROSE = registerBlock("yellow_rose",
-        new FlowerBlock(StatusEffects.RESISTANCE, 5, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //aster
-        public static final Block BLUE_ASTER = registerBlock("blue_aster",
-        new FlowerBlock(StatusEffects.HASTE, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block INDIGO_ASTER = registerBlock("indigo_aster",
-        new FlowerBlock(StatusEffects.HASTE, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block PINK_ASTER = registerBlock("pink_aster",
-        new FlowerBlock(StatusEffects.HASTE, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block VIOLET_ASTER = registerBlock("violet_aster",
-        new FlowerBlock(StatusEffects.HASTE, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block WHITE_ASTER = registerBlock("white_aster",
-        new FlowerBlock(StatusEffects.HASTE, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //cyclamen
-    public static final Block CYCLAMEN = registerBlock("cyclamen",
-        new FlowerBlock(StatusEffects.SLOWNESS, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //dusty miller
-    public static final Block DUSTY_MILLER = registerBlock("dusty_miller",
-        new FlowerBlock(StatusEffects.SLOWNESS, 10, AbstractBlock.Settings.copy(Blocks.FERN).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //flossflower
-    public static final Block BLUE_FLOSSFLOWER = registerBlock("blue_flossflower",
-        new FlowerBlock(StatusEffects.SPEED, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block MAGENTA_FLOSSFLOWER = registerBlock("magenta_flossflower",
-        new FlowerBlock(StatusEffects.SPEED, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block PINK_FLOSSFLOWER = registerBlock("pink_flossflower",
-        new FlowerBlock(StatusEffects.SPEED, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block WHITE_FLOSSFLOWER = registerBlock("white_flossflower",
-        new FlowerBlock(StatusEffects.SPEED, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //thistle
-    public static final Block GLOBE_THISTLE = registerBlock("globe_thistle",
-        new FlowerBlock(StatusEffects.INVISIBILITY, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //buttercup
-    public static final Block BUTTERCUP = registerBlock("buttercup",
-        new FlowerBlock(StatusEffects.BLINDNESS, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //daisy
-    public static final Block PINK_DAISY = registerBlock("pink_daisy",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block YELLOW_DAISY = registerBlock("yellow_daisy",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block WHITE_DAISY = registerBlock("white_daisy",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //silver mound
-    public static final Block SILVER_MOUND_ARTEMISIA = registerBlock("silver_mound_artemisia",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //heliotrope
-    public static final Block SOFT_PINK_HELIOTROPE = registerBlock("soft_pink_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block PINK_HELIOTROPE = registerBlock("pink_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block WHITE_HELIOTROPE = registerBlock("white_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block TRANS_HELIOTROPE = registerBlock("trans_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block VIOLET_HELIOTROPE = registerBlock("violet_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block ORANGE_HELIOTROPE = registerBlock("orange_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block BLACK_HELIOTROPE = registerBlock("black_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block ICE_HELIOTROPE = registerBlock("ice_heliotrope",
-        new FlowerBlock(StatusEffects.JUMP_BOOST, 10, AbstractBlock.Settings.copy(Blocks.LILY_OF_THE_VALLEY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //gomphrena
-    public static final Block GOMPHRENA = registerBlock("gomphrena",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block GOMPHRENA_PATCH = registerBlock("gomphrena_patch",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //dahlia
-    public static final Block DAHLIA = registerBlock("dahlia",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    //bloodroot
-    public static final Block BLOODROOT = registerBlock("bloodroot",
-        new FlowerBlock(StatusEffects.LUCK, 10, AbstractBlock.Settings.copy(Blocks.POPPY).nonOpaque().breakInstantly().noCollision().mapColor(DARK_GREEN).sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-
-    //tall plant
-    public static final Block FOUNTAIN_GRASS = registerBlock("fountain_grass",
-        new TallFlowerBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH).nonOpaque().breakInstantly().noCollision().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-    public static final Block FOXGLOVE = registerBlock("foxglove",
-        new TallFlowerBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH).nonOpaque().breakInstantly().noCollision().sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
-
-    public static final Block VIOLET_AUBRIETA = registerBlock("violet_aubrieta",
-        new FlowerbedBlock(AbstractBlock.Settings.copy(Blocks.PINK_PETALS).nonOpaque().breakInstantly().noCollision().pistonBehavior(PistonBehavior.DESTROY)));
-
-    //sculk
-    public static final Block SCULK_FLORA = registerBlock("sculk_flora",
-            new SculkFlowerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).nonOpaque().noCollision()) {
-                @Override
-                public StatusEffect getEffectInStew() {return (StatusEffect) StatusEffects.DARKNESS;}
-                @Override
-                public int getEffectInStewDuration() {return 10;}
-            });
-    public static final Block SCULK_TENDRIL = registerBlock("sculk_tendril",
-            new SculkFlowerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).nonOpaque().noCollision()) {
-                @Override
-                public StatusEffect getEffectInStew() {return (StatusEffect) StatusEffects.DARKNESS;}
-                @Override
-                public int getEffectInStewDuration() {return 10;}
-                @Override
-                public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
-                    tooltip.add(Text.translatable("tooltip.hanas_blocks.sculk_tendril.tooltip"));
-                    super.appendTooltip(stack, context, tooltip, type);
-                }
-            });
-    public static final Block SCULK_ROSE = registerBlock("sculk_rose",
-            new SculkFlowerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).nonOpaque().noCollision()) {
-                @Override
-                public StatusEffect getEffectInStew() {return (StatusEffect) StatusEffects.DARKNESS;}
-                @Override
-                public int getEffectInStewDuration() {return 10;}
-            });
-    public static final Block GLOWING_SCULK_WISTERIA = registerBlock("glowing_sculk_wisteria",
-            new SculkFlowerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).nonOpaque().noCollision()) {
-                @Override
-                public StatusEffect getEffectInStew() {return (StatusEffect) StatusEffects.DARKNESS;}
-                @Override
-                public int getEffectInStewDuration() {return 10;}
-            });
-    public static final Block GLOWING_SCULK_WISTERIA_BUNDLE = registerBlock("glowing_sculk_wisteria_bundle",
-            new SculkFlowerBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.SCULK).nonOpaque().noCollision()) {
-                @Override
-                public StatusEffect getEffectInStew() {return (StatusEffect) StatusEffects.DARKNESS;}
-                @Override
-                public int getEffectInStewDuration() {return 10;}
-            });
-    
-    //public static final Block WATER_LILY = registerBlock("water_lily",
-    //        new WaterFlower(StatusEffects.CONDUIT_POWER, 10, AbstractBlock.Settings.create().sounds(BlockSoundGroup.WET_GRASS).nonOpaque().noCollision().breakInstantly().notSolid()));
-
-    //Potted
-    //wisteria
-    public static final Block POTTED_GLOWING_WISTERIA = registerBlock("potted_glowing_wisteria",
-        new FlowerPotBlock(GLOWING_WISTERIA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //aconite
-    public static final Block POTTED_ACONITE = registerBlock("potted_aconite",
-        new FlowerPotBlock(ACONITE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //rose
-    public static final Block POTTED_RED_ROSE = registerBlock("potted_red_rose",
-        new FlowerPotBlock(RED_ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_YELLOW_ROSE = registerBlock("potted_yellow_rose",
-        new FlowerPotBlock(YELLOW_ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //aster
-    public static final Block POTTED_BLUE_ASTER = registerBlock("potted_blue_aster",
-        new FlowerPotBlock(BLUE_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_INDIGO_ASTER = registerBlock("potted_indigo_aster",
-        new FlowerPotBlock(INDIGO_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_PINK_ASTER = registerBlock("potted_pink_aster",
-        new FlowerPotBlock(PINK_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_VIOLET_ASTER = registerBlock("potted_violet_aster",
-        new FlowerPotBlock(VIOLET_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_WHITE_ASTER = registerBlock("potted_white_aster",
-        new FlowerPotBlock(WHITE_ASTER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //cyclamen
-    public static final Block POTTED_CYCLAMEN = registerBlock("potted_cyclamen",
-        new FlowerPotBlock(CYCLAMEN, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //dusty miller
-    public static final Block POTTED_DUSTY_MILLER = registerBlock("potted_dusty_miller",
-        new FlowerPotBlock(DUSTY_MILLER, AbstractBlock.Settings.copy(Blocks.POTTED_FERN).nonOpaque()));
-    //flossflower
-    public static final Block POTTED_BLUE_FLOSSFLOWER = registerBlock("potted_blue_flossflower",
-        new FlowerPotBlock(BLUE_FLOSSFLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_MAGENTA_FLOSSFLOWER = registerBlock("potted_magenta_flossflower",
-        new FlowerPotBlock(MAGENTA_FLOSSFLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_PINK_FLOSSFLOWER = registerBlock("potted_pink_flossflower",
-        new FlowerPotBlock(PINK_FLOSSFLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_WHITE_FLOSSFLOWER = registerBlock("potted_white_flossflower",
-        new FlowerPotBlock(WHITE_FLOSSFLOWER, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //
-    public static final Block POTTED_GLOBE_THISTLE = registerBlock("potted_globe_thistle",
-        new FlowerPotBlock(GLOBE_THISTLE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_BUTTERCUP = registerBlock("potted_buttercup",
-        new FlowerPotBlock(BUTTERCUP, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_PINK_DAISY = registerBlock("potted_pink_daisy",
-        new FlowerPotBlock(PINK_DAISY, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_YELLOW_DAISY = registerBlock("potted_yellow_daisy",
-        new FlowerPotBlock(YELLOW_DAISY, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_WHITE_DAISY = registerBlock("potted_white_daisy",
-        new FlowerPotBlock(WHITE_DAISY, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_SILVER_MOUND_ARTEMISIA = registerBlock("potted_silver_mound_artemisia",
-        new FlowerPotBlock(SILVER_MOUND_ARTEMISIA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_SOFT_PINK_HELIOTROPE = registerBlock("potted_soft_pink_heliotrope",
-        new FlowerPotBlock(SOFT_PINK_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_PINK_HELIOTROPE = registerBlock("potted_pink_heliotrope",
-        new FlowerPotBlock(PINK_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_WHITE_HELIOTROPE = registerBlock("potted_white_heliotrope",
-        new FlowerPotBlock(WHITE_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_TRANS_HELIOTROPE = registerBlock("potted_trans_heliotrope",
-        new FlowerPotBlock(TRANS_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_VIOLET_HELIOTROPE = registerBlock("potted_violet_heliotrope",
-        new FlowerPotBlock(VIOLET_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_ORANGE_HELIOTROPE = registerBlock("potted_orange_heliotrope",
-        new FlowerPotBlock(ORANGE_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_BLACK_HELIOTROPE = registerBlock("potted_black_heliotrope",
-        new FlowerPotBlock(BLACK_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_ICE_HELIOTROPE = registerBlock("potted_ice_heliotrope",
-        new FlowerPotBlock(ICE_HELIOTROPE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_GOMPHRENA = registerBlock("potted_gomphrena",
-        new FlowerPotBlock(GOMPHRENA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    //
-    public static final Block POTTED_DAHLIA = registerBlock("potted_dahlia",
-            new FlowerPotBlock(DAHLIA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_BLOODROOT = registerBlock("potted_bloodroot",
-            new FlowerPotBlock(BLOODROOT, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-
-    //public static final Block POTTED_HOSTA = registerBlock("potted_hosta",
-    //        new FlowerPotBlock(HOSTA, AbstractBlock.Settings.create().nonOpaque()));
-
-    public static final Block POTTED_VIOLET_AUBRIETA = registerBlock("potted_violet_aubrieta",
-        new FlowerPotBlock(VIOLET_AUBRIETA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-
-    public static final Block POTTED_SCULK_TENDRIL = registerBlock("potted_sculk_tendril",
-        new FlowerPotBlock(SCULK_TENDRIL, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_SCULK_ROSE = Registry.register(Registries.BLOCK, Identifier.of(HanasBlocks.MOD_ID, "potted_sculk_rose"),
-        new FlowerPotBlock(SCULK_ROSE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_GLOWING_SCULK_WISTERIA = registerBlock("potted_glowing_sculk_wisteria",
-        new FlowerPotBlock(GLOWING_SCULK_WISTERIA, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-    public static final Block POTTED_GLOWING_SCULK_WISTERIA_BUNDLE = registerBlock("potted_glowing_sculk_wisteria_bundle",
-        new FlowerPotBlock(GLOWING_SCULK_WISTERIA_BUNDLE, AbstractBlock.Settings.copy(Blocks.POTTED_ALLIUM).nonOpaque()));
-
-    public static final Block MAHOGANY_LOG = registerBlock("mahogany_log", 
-        new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG).strength(3f)));
-    public static final Block MAHOGANY_WOOD = registerBlock("mahogany_wood", 
-        new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(3f)));
-    public static final Block STRIPPED_MAHOGANY_LOG = registerBlock("stripped_mahogany_log", 
-        new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
-    public static final Block STRIPPED_MAHOGANY_WOOD = registerBlock("stripped_mahogany_wood", 
-        new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
-
-    public static final Block MAHOGANY_PLANKS = registerBlock("mahogany_planks", 
-        new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(1.0f, 3.0f)));
-    public static final Block MAHOGANY_SLAB= registerBlock("mahogany_slab",
-            new SlabBlock(AbstractBlock.Settings.copy(MAHOGANY_PLANKS)));
-    public static final Block MAHOGANY_STAIRS = registerBlock("mahogany_stairs",
-            new StairsBlock(MAHOGANY_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(MAHOGANY_PLANKS)));
-    public static final Block MAHOGANY_FENCE = registerBlock("mahogany_fence",
-        new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(3f)));
-    public static final Block MAHOGANY_FENCE_GATE = registerBlock("mahogany_fence_gate",
-        new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(3f)));
-    public static final Block MAHOGANY_TRAPDOOR = registerBlock("mahogany_trapdoor",
-            new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).nonOpaque()));
-    public static final Block MAHOGANY_DOOR = registerBlock("mahogany_door",
-            new DoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_DOOR).nonOpaque()));
-    public static final Block MAHOGANY_PLATE = registerBlock("mahogany_plate",
-            new PressurePlateBlock(BlockSetType.COPPER, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
-    public static final Block MAHOGANY_BUTTON = registerBlock("mahogany_button",
-            new ButtonBlock(BlockSetType.COPPER, 30, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
-    
-
-    public static final Block MAHOGANY_LEAVES = registerBlock("mahogany_leaves",
-        new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).strength(1f)));
 
     //Polished Ice
     public static final Block POLISHED_ICE = registerBlock("polished_ice",
@@ -919,7 +599,145 @@ public class ModBlocks {
     public static final Block TRANSGENDER_BLOCK = registerBlock("transgender_block",
         new Block(AbstractBlock.Settings.create().sounds(BlockSoundGroup.CHERRY_WOOD).strength(0.1f, 1.0f)));
 
-    private static Block registerBlock(String name, Block block) {
+    // Vertical Slabs
+    public static final Block OAK_VERTICAL_SLAB = registerBlock("oak_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(OAK_SLAB).nonOpaque()));
+    public static final Block SPRUCE_VERTICAL_SLAB = registerBlock("spruce_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SPRUCE_SLAB).nonOpaque()));
+    public static final Block BIRCH_VERTICAL_SLAB = registerBlock("birch_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(BIRCH_SLAB).nonOpaque()));
+    public static final Block JUNGLE_VERTICAL_SLAB = registerBlock("jungle_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(JUNGLE_SLAB).nonOpaque()));
+    public static final Block ACACIA_VERTICAL_SLAB = registerBlock("acacia_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(ACACIA_SLAB).nonOpaque()));
+    public static final Block DARK_OAK_VERTICAL_SLAB = registerBlock("dark_oak_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DARK_OAK_SLAB).nonOpaque()));
+    public static final Block MANGROVE_VERTICAL_SLAB = registerBlock("mangrove_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(MANGROVE_SLAB).nonOpaque()));
+    public static final Block CHERRY_VERTICAL_SLAB = registerBlock("cherry_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(CHERRY_SLAB).nonOpaque()));
+    public static final Block BAMBOO_VERTICAL_SLAB = registerBlock("bamboo_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(BAMBOO_SLAB).nonOpaque()));
+    public static final Block BAMBOO_MOSAIC_VERTICAL_SLAB = registerBlock("bamboo_mosaic_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(BAMBOO_MOSAIC_SLAB).nonOpaque()));
+    public static final Block CRIMSON_VERTICAL_SLAB = registerBlock("crimson_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(CRIMSON_SLAB).nonOpaque()));
+    public static final Block WARPED_VERTICAL_SLAB = registerBlock("warped_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WARPED_SLAB).nonOpaque()));
+    public static final Block STONE_VERTICAL_SLAB = registerBlock("stone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(STONE_SLAB).nonOpaque()));
+    public static final Block COBBLESTONE_VERTICAL_SLAB = registerBlock("cobblestone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(COBBLESTONE_SLAB).nonOpaque()));
+    public static final Block MOSSY_COBBLESTONE_VERTICAL_SLAB = registerBlock("mossy_cobblestone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(MOSSY_COBBLESTONE_SLAB).nonOpaque()));
+    public static final Block SMOOTH_STONE_VERTICAL_SLAB = registerBlock("smooth_stone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SMOOTH_STONE_SLAB).nonOpaque()));
+    public static final Block STONE_BRICK_VERTICAL_SLAB = registerBlock("stone_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(STONE_BRICK_SLAB).nonOpaque()));
+    public static final Block MOSSY_STONE_BRICK_VERTICAL_SLAB = registerBlock("mossy_stone_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(MOSSY_STONE_BRICK_SLAB).nonOpaque()));
+    public static final Block GRANITE_VERTICAL_SLAB = registerBlock("granite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(GRANITE_SLAB).nonOpaque()));
+    public static final Block POLISHED_GRANITE_VERTICAL_SLAB = registerBlock("polished_granite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_GRANITE_SLAB).nonOpaque()));
+    public static final Block DIORITE_VERTICAL_SLAB = registerBlock("diorite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DIORITE_SLAB).nonOpaque()));
+    public static final Block POLISHED_DIORITE_VERTICAL_SLAB = registerBlock("polished_diorite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_DIORITE_SLAB).nonOpaque()));
+    public static final Block ANDESITE_VERTICAL_SLAB = registerBlock("andesite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(ANDESITE_SLAB).nonOpaque()));
+    public static final Block POLISHED_ANDESITE_VERTICAL_SLAB = registerBlock("polished_andesite_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_ANDESITE_SLAB).nonOpaque()));
+    public static final Block COBBLED_DEEPSLATE_VERTICAL_SLAB = registerBlock("cobbled_deepslate_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(COBBLED_DEEPSLATE_SLAB).nonOpaque()));
+    public static final Block POLISHED_DEEPSLATE_VERTICAL_SLAB = registerBlock("polished_deepslate_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_DEEPSLATE_SLAB).nonOpaque()));
+    public static final Block DEEPSLATE_BRICK_VERTICAL_SLAB = registerBlock("deepslate_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DEEPSLATE_BRICK_SLAB).nonOpaque()));
+    public static final Block DEEPSLATE_TILE_VERTICAL_SLAB = registerBlock("deepslate_tile_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DEEPSLATE_TILE_SLAB).nonOpaque()));
+    public static final Block TUFF_VERTICAL_SLAB = registerBlock("tuff_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(TUFF_SLAB).nonOpaque()));
+    public static final Block POLISHED_TUFF_VERTICAL_SLAB = registerBlock("polished_tuff_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_TUFF_SLAB).nonOpaque()));
+    public static final Block TUFF_BRICK_VERTICAL_SLAB = registerBlock("tuff_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(TUFF_BRICK_SLAB).nonOpaque()));
+    public static final Block BRICK_VERTICAL_SLAB = registerBlock("brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(BRICK_SLAB).nonOpaque()));
+    public static final Block MUD_BRICK_VERTICAL_SLAB = registerBlock("mud_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(MUD_BRICK_SLAB).nonOpaque()));
+    public static final Block SANDSTONE_VERTICAL_SLAB = registerBlock("sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SANDSTONE_SLAB).nonOpaque()));
+    public static final Block SMOOTH_SANDSTONE_VERTICAL_SLAB = registerBlock("smooth_sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SMOOTH_SANDSTONE_SLAB).nonOpaque()));
+    public static final Block CUT_SANDSTONE_VERTICAL_SLAB = registerBlock("cut_sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(CUT_SANDSTONE_SLAB).nonOpaque()));
+    public static final Block RED_SANDSTONE_VERTICAL_SLAB = registerBlock("red_sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(RED_SANDSTONE_SLAB).nonOpaque()));
+    public static final Block SMOOTH_RED_SANDSTONE_VERTICAL_SLAB = registerBlock("smooth_red_sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SMOOTH_RED_SANDSTONE_SLAB).nonOpaque()));
+    public static final Block CUT_RED_SANDSTONE_VERTICAL_SLAB = registerBlock("cut_red_sandstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(CUT_RED_SANDSTONE_SLAB).nonOpaque()));
+    public static final Block PRISMARINE_VERTICAL_SLAB = registerBlock("prismarine_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(PRISMARINE_SLAB).nonOpaque()));
+    public static final Block PRISMARINE_BRICK_VERTICAL_SLAB = registerBlock("prismarine_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(PRISMARINE_BRICK_SLAB).nonOpaque()));
+    public static final Block DARK_PRISMARINE_VERTICAL_SLAB = registerBlock("dark_prismarine_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DARK_PRISMARINE_SLAB).nonOpaque()));
+    public static final Block NETHER_BRICK_VERTICAL_SLAB = registerBlock("nether_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(NETHER_BRICK_SLAB).nonOpaque()));
+    public static final Block RED_NETHER_BRICK_VERTICAL_SLAB = registerBlock("red_nether_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(RED_NETHER_BRICK_SLAB).nonOpaque()));
+    public static final Block BLACKSTONE_VERTICAL_SLAB = registerBlock("blackstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(BLACKSTONE_SLAB).nonOpaque()));
+    public static final Block POLISHED_BLACKSTONE_VERTICAL_SLAB = registerBlock("polished_blackstone_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_BLACKSTONE_SLAB).nonOpaque()));
+    public static final Block POLISHED_BLACKSTONE_BRICK_VERTICAL_SLAB = registerBlock("polished_blackstone_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(POLISHED_BLACKSTONE_BRICK_SLAB).nonOpaque()));
+    public static final Block END_STONE_BRICK_VERTICAL_SLAB = registerBlock("end_stone_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(END_STONE_BRICK_SLAB).nonOpaque()));
+    public static final Block PURPUR_VERTICAL_SLAB = registerBlock("purpur_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(PURPUR_SLAB).nonOpaque()));
+    public static final Block QUARTZ_VERTICAL_SLAB = registerBlock("quartz_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(QUARTZ_SLAB).nonOpaque()));
+    public static final Block SMOOTH_QUARTZ_VERTICAL_SLAB = registerBlock("smooth_quartz_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SMOOTH_QUARTZ_SLAB).nonOpaque()));
+    public static final Block CUT_COPPER_VERTICAL_SLAB = registerBlock("cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block EXPOSED_CUT_COPPER_VERTICAL_SLAB = registerBlock("exposed_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(EXPOSED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block WEATHERED_CUT_COPPER_VERTICAL_SLAB = registerBlock("weathered_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WEATHERED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block OXIDIZED_CUT_COPPER_VERTICAL_SLAB = registerBlock("oxidized_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(OXIDIZED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block WAXED_CUT_COPPER_VERTICAL_SLAB = registerBlock("waxed_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WAXED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block WAXED_EXPOSED_CUT_COPPER_VERTICAL_SLAB = registerBlock("waxed_exposed_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WAXED_EXPOSED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block WAXED_WEATHERED_CUT_COPPER_VERTICAL_SLAB = registerBlock("waxed_weathered_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WAXED_WEATHERED_CUT_COPPER_SLAB).nonOpaque()));
+    public static final Block WAXED_OXIDIZED_CUT_COPPER_VERTICAL_SLAB = registerBlock("waxed_oxidized_cut_copper_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(WAXED_OXIDIZED_CUT_COPPER_SLAB).nonOpaque()));
+
+    public static final Block ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("dull_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(DULL_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("tarnished_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(TARNISHED_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("ruined_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(RUINED_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block SEALED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("sealed_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SEALED_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block SEALED_DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("sealed_dull_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SEALED_DULL_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block SEALED_TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("sealed_tarnished_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SEALED_TARNISHED_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+    public static final Block SEALED_RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB = registerBlock("sealed_ruined_ancient_netherite_brick_vertical_slab",
+            new ModVerticalSlabBlock(AbstractBlock.Settings.copy(SEALED_RUINED_ANCIENT_NETHERITE_BRICK_SLAB).nonOpaque()));
+
+
+    static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(HanasBlocks.MOD_ID, name), block);
     }

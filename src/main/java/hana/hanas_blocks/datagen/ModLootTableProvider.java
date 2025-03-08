@@ -1,26 +1,39 @@
 package hana.hanas_blocks.datagen;
 
 import hana.hanas_blocks.HanasBlocks;
+import hana.hanas_blocks.block.GlassBlocks;
+import hana.hanas_blocks.block.TintedGlassBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import hana.hanas_blocks.block.ModBlocks;
 import hana.hanas_blocks.item.ModItems;
 import net.fabricmc.loader.api.ModContainer;
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.enums.SlabType;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.entry.LootTableEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.ConditionalLootFunction;
+import net.minecraft.loot.function.LootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
 
 import java.nio.file.Path;
 import java.util.concurrent.CompletableFuture;
@@ -37,26 +50,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider{
     @Override
     public void generate() {
         addDrop(ModBlocks.CHARCOAL_BLOCK);
-
-        addDrop(ModBlocks.LOW_QUALITY_PEARLARIUM_ORE, PearlariumOreDrops(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE));
-        addDrop(ModBlocks.PEARLARIUM_ORE, PearlariumOreDrops(ModBlocks.PEARLARIUM_ORE));
-        addDrop(ModBlocks.DEEPSLATE_PEARLARIUM_ORE, PearlariumOreDrops(ModBlocks.DEEPSLATE_PEARLARIUM_ORE));
-        addDrop(ModBlocks.PEARLARIUM_CRYSTAL_BLOCK);
-        addDrop(ModBlocks.PEARLARIUM_ALLOY_SHEET_BLOCK);
-        addDrop(ModBlocks.PEARLARIUM_BLOCK);
-        addDrop(ModBlocks.PEARLARIUM_SLAB, slabDrops(ModBlocks.PEARLARIUM_SLAB));
-        addDrop(ModBlocks.PEARLARIUM_STAIRS);
-        addDrop(ModBlocks.PEARLARIUM_WALL);
-
-        addDrop(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE, NigrumPetramiuniumOreDrops(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE));
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_ORE, NigrumPetramiuniumOreDrops(ModBlocks.NIGRUM_PETRAMIUNIUM_ORE));
-        addDrop(ModBlocks.DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE, NigrumPetramiuniumOreDrops(ModBlocks.DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE));
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK);
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK);
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_BLOCK);
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB, slabDrops(ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB));
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_STAIRS);
-        addDrop(ModBlocks.NIGRUM_PETRAMIUNIUM_WALL);
         
         addDrop(ModBlocks.NETHERRACK_BRICK);
         addDrop(ModBlocks.NETHERRACK_BRICK_WALL);
@@ -96,75 +89,133 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider{
 
         addDrop(ModBlocks.RAW_QUARTZ_BLOCK);
 
-    //plants
-        addDrop(ModBlocks.GLOWING_WISTERIA);
-        addPottedPlantDrops(ModBlocks.POTTED_GLOWING_WISTERIA);
-        addDrop(ModBlocks.ACONITE);
-        addPottedPlantDrops(ModBlocks.POTTED_ACONITE);
-        addDrop(ModBlocks.RED_ROSE);
-        addPottedPlantDrops(ModBlocks.POTTED_RED_ROSE);
-        addDrop(ModBlocks.BLUE_ASTER);
-        addPottedPlantDrops(ModBlocks.POTTED_BLUE_ASTER);
-        addDrop(ModBlocks.INDIGO_ASTER);
-        addPottedPlantDrops(ModBlocks.POTTED_INDIGO_ASTER);
-        addDrop(ModBlocks.PINK_ASTER);
-        addPottedPlantDrops(ModBlocks.POTTED_PINK_ASTER);
-        addDrop(ModBlocks.VIOLET_ASTER);
-        addPottedPlantDrops(ModBlocks.POTTED_VIOLET_ASTER);
-        addDrop(ModBlocks.WHITE_ASTER);
-        addPottedPlantDrops(ModBlocks.POTTED_WHITE_ASTER);
-        addDrop(ModBlocks.CYCLAMEN);
-        addPottedPlantDrops(ModBlocks.POTTED_CYCLAMEN);
-        addDrop(ModBlocks.DUSTY_MILLER);
-        addPottedPlantDrops(ModBlocks.POTTED_DUSTY_MILLER);
-        addDrop(ModBlocks.BLUE_FLOSSFLOWER);
-        addPottedPlantDrops(ModBlocks.POTTED_BLUE_FLOSSFLOWER);
-        addDrop(ModBlocks.MAGENTA_FLOSSFLOWER);
-        addPottedPlantDrops(ModBlocks.POTTED_MAGENTA_FLOSSFLOWER);
-        addDrop(ModBlocks.PINK_FLOSSFLOWER);
-        addPottedPlantDrops(ModBlocks.POTTED_PINK_FLOSSFLOWER);
-        addDrop(ModBlocks.WHITE_FLOSSFLOWER);
-        addPottedPlantDrops(ModBlocks.POTTED_WHITE_FLOSSFLOWER);
+        addDrop(TintedGlassBlocks.TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.TINTED_GLASS_SLAB);
+        addDrop(TintedGlassBlocks.TINTED_GLASS_VERTICAL_SLAB);
 
-        //addDrop(ModBlocks.VIOLET_AUBRIETA);
-        //addPottedPlantDrops(ModBlocks.POTTED_VIOLET_AUBRIETA);
+        addDrop(TintedGlassBlocks.RED_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS);
+        addDrop(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS);
 
-        addDrop(ModBlocks.SCULK_TENDRIL);
-        addPottedPlantDrops(ModBlocks.POTTED_SCULK_TENDRIL);
-        addDrop(ModBlocks.SCULK_ROSE);
-        addPottedPlantDrops(ModBlocks.POTTED_SCULK_ROSE);
-        addDrop(ModBlocks.GLOWING_SCULK_WISTERIA);
-        addPottedPlantDrops(ModBlocks.POTTED_GLOWING_SCULK_WISTERIA);
-        addDrop(ModBlocks.GLOWING_SCULK_WISTERIA_BUNDLE);
-        addPottedPlantDrops(ModBlocks.POTTED_GLOWING_SCULK_WISTERIA_BUNDLE);
+        addDrop(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_STAIRS);
+        addDrop(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_STAIRS);
 
-        //addDrop(ModBlocks.RUBY_DOOR, doorDrops(ModBlocks."example_door"));
+        slabDrops(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_SLAB);
+        slabDrops(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_SLAB);
 
-        addDrop(ModBlocks.MAHOGANY_LOG);
-        addDrop(ModBlocks.MAHOGANY_WOOD);
-        addDrop(ModBlocks.STRIPPED_MAHOGANY_LOG);
-        addDrop(ModBlocks.STRIPPED_MAHOGANY_WOOD);
-        addDrop(ModBlocks.MAHOGANY_PLANKS);
+        slabDrops(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+        slabDrops(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
 
-        addDrop(ModBlocks.MAHOGANY_LEAVES, leavesDrops(ModBlocks.MAHOGANY_LEAVES, ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB, 0.0025f)); //TODO
+        addDrop(GlassBlocks.GLASS_STAIRS);
+        addDrop(GlassBlocks.GLASS_SLAB);
+        addDrop(GlassBlocks.GLASS_VERTICAL_SLAB);
 
-        //addDropwithSilkTouch(ModBlocks.<BlockName>);
+        addDrop(GlassBlocks.RED_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.ORANGE_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.YELLOW_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.LIME_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.GREEN_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.CYAN_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.BLUE_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.PURPLE_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.MAGENTA_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.PINK_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.GRAY_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.BLACK_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.BROWN_STAINED_GLASS_STAIRS);
+        addDrop(GlassBlocks.WHITE_STAINED_GLASS_STAIRS);
+
+        slabDrops(GlassBlocks.RED_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.ORANGE_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.YELLOW_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.LIME_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.GREEN_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.CYAN_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.BLUE_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.PURPLE_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.MAGENTA_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.PINK_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.GRAY_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.BLACK_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.BROWN_STAINED_GLASS_SLAB);
+        slabDrops(GlassBlocks.WHITE_STAINED_GLASS_SLAB);
+
+        slabDrops(GlassBlocks.RED_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.ORANGE_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.YELLOW_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.LIME_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.GREEN_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.CYAN_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.BLUE_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.PURPLE_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.MAGENTA_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.PINK_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.GRAY_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.BLACK_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.BROWN_STAINED_GLASS_VERTICAL_SLAB);
+        slabDrops(GlassBlocks.WHITE_STAINED_GLASS_VERTICAL_SLAB);
     }
-    
-    public LootTable.Builder PearlariumOreDrops(Block drop) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ItemEntry.builder(ModItems.RAW_PEARLARIUM)
-            .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 6.0F)))
-                .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
-    }
-
-    public LootTable.Builder NigrumPetramiuniumOreDrops(Block drop) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ItemEntry.builder(ModItems.RAW_NIGRUM_PETRAMIUNIUM)
-                .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 6.0F)))
-                .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
-    }
-
 }
 
 

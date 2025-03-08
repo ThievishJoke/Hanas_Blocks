@@ -18,119 +18,22 @@ public class ModItemGroups {
     //                entries.add(ModItems.RAW_PEARLARIUM);
     //                
     //            }).build());
-    public static final ItemGroup BLAHAJ = Registry.register(Registries.ITEM_GROUP,
-            Identifier.of(HanasBlocks.MOD_ID, "blahaj"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.blahaj"))
-            .icon(() -> new ItemStack(ModItems.BLAHAJ)).entries((displayContext, entries) -> {
-                    entries.add(ModItems.WHITE_BLAHAJ);
-                    entries.add(ModItems.ORANGE_BLAHAJ);
-                    entries.add(ModItems.MAGENTA_BLAHAJ);
-                    entries.add(ModItems.LIGHT_BLUE_BLAHAJ);
-                    entries.add(ModItems.YELLOW_BLAHAJ);
-                    entries.add(ModItems.LIME_BLAHAJ);
-                    entries.add(ModItems.PINK_BLAHAJ);
-                    entries.add(ModItems.GRAY_BLAHAJ);
-                    entries.add(ModItems.LIGHT_GRAY_BLAHAJ);
-                    entries.add(ModItems.CYAN_BLAHAJ);
-                    entries.add(ModItems.PURPLE_BLAHAJ);
-                    entries.add(ModItems.BLAHAJ);
-                    entries.add(ModItems.BROWN_BLAHAJ );
-                    entries.add(ModItems.GREEN_BLAHAJ);
-                    entries.add(ModItems.RED_BLAHAJ);
-                    entries.add(ModItems.BLACK_BLAHAJ);
-
-                    entries.add(ModItems.NEON_PINK_BLAHAJ);
-
-                    entries.add(ModItems.PEARLARIUM_BLAHAJ);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_BLAHAJ);
-
-                    entries.add(ModItems.PRIDE_BLAHAJ);
-                    entries.add(ModItems.TRANSGENDER_BLAHAJ);
-                    entries.add(ModItems.DEMIBOY_BLAHAJ);
-                    entries.add(ModItems.DEMIGIRL_BLAHAJ);
-                    entries.add(ModItems.GENDERFLUID_BLAHAJ);
-                    entries.add(ModItems.NON_BINARY_BLAHAJ);
-                    entries.add(ModItems.POLYGENDER_BLAHAJ);
-                    entries.add(ModItems.LESBIAN_BLAHAJ);
-                    entries.add(ModItems.GAY_BLAHAJ);
-                    entries.add(ModItems.PANSEXUAL_BLAHAJ);
-                    entries.add(ModItems.BISEXUAL_BLAHAJ);
-
-                }).build());
+    //public static final ItemGroup BLAHAJ = Registry.register(Registries.ITEM_GROUP,
+    //        Identifier.of(HanasBlocks.MOD_ID, "blahaj"),
+    //        FabricItemGroup.builder().displayName(Text.translatable("itemgroup.blahaj"))
+    //        .icon(() -> new ItemStack(ModItems.BLAHAJ)).entries((displayContext, entries) -> {
+    //                entries.add(ModItems.PEARLARIUM_BLAHAJ);
+    //                entries.add(ModItems.NIGRUM_PETRAMIUNIUM_BLAHAJ);
+    //            }).build());
 
     public static final ItemGroup SHEET_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(HanasBlocks.MOD_ID, "sheet_item_group"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.hanas_stuff"))
-            .icon(() -> new ItemStack(ModItems.PEARLARIUM_ALLOY_SHEET)).entries((displayContext, entries) -> {
+            .icon(() -> new ItemStack(ModItems.COPPER_SHEET)).entries((displayContext, entries) -> {
                     entries.add(ModItems.COPPER_SHEET);
                     entries.add(ModItems.IRON_SHEET);
                     entries.add(ModItems.GOLD_SHEET);
                     entries.add(ModItems.SCRAP_SHEET);
-              
-                    entries.add(ModItems.RAW_PEARLARIUM);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_INGOT);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_SHEET);
-                    entries.add(ModItems.PEARLARIUM_CRYSTAL);
-                    entries.add(ModItems.CRUSHED_PEARLARIUM);
-
-                    entries.add(ModItems.RAW_NIGRUM_PETRAMIUNIUM);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_INGOT);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_PLATE);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_CRYSTAL);
-                    entries.add(ModItems.CRUSHED_NIGRUM_PETRAMIUNIUM);
-
-                    entries.add(ModItems.PEARLARIUM_HELMET);
-                    entries.add(ModItems.PEARLARIUM_CHESTPLATE);
-                    entries.add(ModItems.PEARLARIUM_LEGGINGS);
-                    entries.add(ModItems.PEARLARIUM_BOOTS);
-                    //entries.add(ModItems.PEARLARIUM_PLATE_HELMET);
-                    //entries.add(ModItems.PEARLARIUM_PLATE_CHESTPLATE);
-                    //entries.add(ModItems.PEARLARIUM_PLATE_LEGGINGS);
-                    //entries.add(ModItems.PEARLARIUM_PLATE_BOOTS);
-
-                    //entries.add(ModItems.PEARLARIUM_PLATED_SHIELD);
-
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_HELMET);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_CHESTPLATE);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_LEGGINGS);
-                    entries.add(ModItems.NIGRUM_PETRAMIUNIUM_BOOTS);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_SWORD);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_SWORD);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SWORD);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SWORD);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_LONGSWORD);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PICKAXE);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_PICKAXE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PICKAXE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_PICKAXE);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_SHOVEL);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_SHOVEL);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SHOVEL);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SHOVEL);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_AXE);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_AXE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_AXE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_AXE);
-
-                    entries.add(ModItems.PEARLARIUM_ALLOY_HOE);
-                    entries.add(ModItems.PEARLARIUM_ALLOY_PLATE_HOE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_HOE);
-                    //entries.add(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_HOE);
-
-                    entries.add(ModItems.PEARLARIUM_HORSE_ARMOR);
-
-                    entries.add(ModItems.SHOCK_SMITHING_TEMPLATE);
 
                     entries.add(ModBlocks.ACACIA_PLANK_BOOKSHELF);
                     entries.add(ModBlocks.OAK_PLANK_BOOKSHELF);
@@ -144,51 +47,7 @@ public class ModItemGroups {
                     entries.add(ModBlocks.WARPED_PLANK_BOOKSHELF);
                     entries.add(ModBlocks.CRIMSON_PLANK_BOOKSHELF);
 
-                    entries.add(ModBlocks.MAHOGANY_PLANK_BOOKSHELF);
-
                     entries.add(ModItems.SCULK_MATERIAL);
-                    entries.add(ModBlocks.GLOWING_WISTERIA);
-                    entries.add(ModBlocks.ACONITE);
-                    entries.add(ModBlocks.RED_ROSE);
-                    entries.add(ModBlocks.BLUE_ASTER);
-                    entries.add(ModBlocks.INDIGO_ASTER);
-                    entries.add(ModBlocks.PINK_ASTER);
-                    entries.add(ModBlocks.VIOLET_ASTER);
-                    entries.add(ModBlocks.WHITE_ASTER);
-                    entries.add(ModBlocks.CYCLAMEN);
-                    entries.add(ModBlocks.DUSTY_MILLER);
-                    entries.add(ModBlocks.BLUE_FLOSSFLOWER);
-                    entries.add(ModBlocks.MAGENTA_FLOSSFLOWER);
-                    entries.add(ModBlocks.PINK_FLOSSFLOWER);
-                    entries.add(ModBlocks.WHITE_FLOSSFLOWER);
-                    entries.add(ModBlocks.GLOBE_THISTLE);
-                    entries.add(ModBlocks.BUTTERCUP);
-                    entries.add(ModBlocks.PINK_DAISY);
-                    entries.add(ModBlocks.YELLOW_DAISY);
-                    entries.add(ModBlocks.WHITE_DAISY);
-                    entries.add(ModBlocks.SILVER_MOUND_ARTEMISIA);
-                    entries.add(ModBlocks.SOFT_PINK_HELIOTROPE);
-                    entries.add(ModBlocks.PINK_HELIOTROPE);
-                    entries.add(ModBlocks.WHITE_HELIOTROPE);
-                    entries.add(ModBlocks.TRANS_HELIOTROPE);
-                    entries.add(ModBlocks.VIOLET_HELIOTROPE);
-                    entries.add(ModBlocks.ORANGE_HELIOTROPE);
-                    entries.add(ModBlocks.BLACK_HELIOTROPE);
-                    entries.add(ModBlocks.ICE_HELIOTROPE);
-                    entries.add(ModBlocks.GOMPHRENA);
-                    entries.add(ModBlocks.GOMPHRENA_PATCH);
-                    entries.add(ModBlocks.DAHLIA);
-                    entries.add(ModBlocks.BLOODROOT);
-
-                    entries.add(ModBlocks.FOUNTAIN_GRASS);
-                    entries.add(ModBlocks.FOXGLOVE);
-
-                    //entries.add(ModBlocks.VIOLET_AUBRIETA);
-
-                    entries.add(ModBlocks.SCULK_TENDRIL);
-                    entries.add(ModBlocks.SCULK_ROSE);
-                    entries.add(ModBlocks.GLOWING_SCULK_WISTERIA);
-                    entries.add(ModBlocks.GLOWING_SCULK_WISTERIA_BUNDLE);
 
                     entries.add(ModBlocks.SCULKED_DEEPSLATE);
                     entries.add(ModBlocks.SCULKED_COBBLED_DEEPSLATE);
@@ -208,28 +67,6 @@ public class ModItemGroups {
 
                     entries.add(ModBlocks.IRON_SHEET_BLOCK);
                     entries.add(ModBlocks.GOLD_SHEET_BLOCK);
-
-                    entries.add(ModBlocks.LOW_QUALITY_PEARLARIUM_ORE);
-                    entries.add(ModBlocks.PEARLARIUM_ORE);
-                    entries.add(ModBlocks.DEEPSLATE_PEARLARIUM_ORE);
-                    entries.add(ModBlocks.PEARLARIUM_CRYSTAL_BLOCK);
-                    entries.add(ModBlocks.PEARLARIUM_ALLOY_SHEET_BLOCK);
-                    entries.add(ModBlocks.PEARLARIUM_BLOCK);
-                    entries.add(ModBlocks.PEARLARIUM_SLAB);
-                    entries.add(ModBlocks.PEARLARIUM_STAIRS);
-                    entries.add(ModBlocks.PEARLARIUM_WALL);
-                    entries.add(ModBlocks.PEARLARIUM_TRAPDOOR);
-
-                    entries.add(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_ORE);
-                    entries.add(ModBlocks.DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_BLOCK);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_STAIRS);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_WALL);
-                    entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_TRAPDOOR);
 
                     entries.add(ModBlocks.ANCIENT_NETHERITE_BRICK);
                     entries.add(ModBlocks.ANCIENT_NETHERITE_BRICK_SLAB);
@@ -406,19 +243,76 @@ public class ModItemGroups {
                     entries.add(ModBlocks.POLISHED_BASALT_BRICK_SLAB);
                     entries.add(ModBlocks.POLISHED_BASALT_BRICK_WALL);
 
-                    //entries.add(ModBlocks.SCULK_TABLE);
+                    entries.add(ModBlocks.OAK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SPRUCE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.BIRCH_VERTICAL_SLAB);
+                    entries.add(ModBlocks.JUNGLE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.ACACIA_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DARK_OAK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.MANGROVE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.CHERRY_VERTICAL_SLAB);
+                    entries.add(ModBlocks.BAMBOO_VERTICAL_SLAB);
+                    entries.add(ModBlocks.BAMBOO_MOSAIC_VERTICAL_SLAB);
+                    entries.add(ModBlocks.CRIMSON_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WARPED_VERTICAL_SLAB);
+                    entries.add(ModBlocks.STONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.COBBLESTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.MOSSY_COBBLESTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.STONE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.MOSSY_STONE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.GRANITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_GRANITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DIORITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.ANDESITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_ANDESITE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.COBBLED_DEEPSLATE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_DEEPSLATE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DEEPSLATE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DEEPSLATE_TILE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.TUFF_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_TUFF_VERTICAL_SLAB);
+                    entries.add(ModBlocks.TUFF_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.MUD_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SMOOTH_SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.CUT_SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.RED_SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SMOOTH_RED_SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.CUT_RED_SANDSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.PRISMARINE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.PRISMARINE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DARK_PRISMARINE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.NETHER_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.RED_NETHER_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.BLACKSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_BLACKSTONE_VERTICAL_SLAB);
+                    entries.add(ModBlocks.POLISHED_BLACKSTONE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.END_STONE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.PURPUR_VERTICAL_SLAB);
+                    entries.add(ModBlocks.QUARTZ_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SMOOTH_QUARTZ_VERTICAL_SLAB);
+                    entries.add(ModBlocks.CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.EXPOSED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WEATHERED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.OXIDIZED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WAXED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WAXED_EXPOSED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WAXED_WEATHERED_CUT_COPPER_VERTICAL_SLAB);
+                    entries.add(ModBlocks.WAXED_OXIDIZED_CUT_COPPER_VERTICAL_SLAB);
 
-                    entries.add(ModBlocks.MAHOGANY_LOG);
-                    entries.add(ModBlocks.MAHOGANY_WOOD);
-                    entries.add(ModBlocks.STRIPPED_MAHOGANY_LOG);
-                    entries.add(ModBlocks.STRIPPED_MAHOGANY_WOOD);
-                    entries.add(ModBlocks.MAHOGANY_PLANKS);
-                    entries.add(ModBlocks.MAHOGANY_LEAVES);
-
-                    entries.add(ModItems.TOMATO);
-                    entries.add(ModItems.TOMATO_BREAD);
-                    entries.add(ModItems.BUNS);
-                    entries.add(ModItems.HAMBURGER);
+                    //entries.add(ModBlocks.PEARLARIUM_VERTICAL_SLAB);
+                    //entries.add(ModBlocks.NIGRUM_PETRAMIUNIUM_VERTICAL_SLAB);
+                    entries.add(ModBlocks.ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SEALED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SEALED_DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SEALED_TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+                    entries.add(ModBlocks.SEALED_RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
                 }).build());
 
 

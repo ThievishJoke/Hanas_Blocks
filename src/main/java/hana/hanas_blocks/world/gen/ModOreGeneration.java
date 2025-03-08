@@ -8,9 +8,6 @@ import net.minecraft.world.gen.GenerationStep;
 public class ModOreGeneration {
     public static void generateOres() {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.PEARLARIUM_ORE_PLACED_KEY);
-
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.NIGRUM_PETRAMIUNIUM_ORE_PLACED_KEY);
+                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.MARBLE_ORE_PLACED_KEY);
     }
 }

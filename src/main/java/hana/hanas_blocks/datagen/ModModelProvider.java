@@ -2,16 +2,23 @@ package hana.hanas_blocks.datagen;
 
 import hana.hanas_blocks.block.ModBlocks;
 import hana.hanas_blocks.block.custom.ModLampBlock;
+import hana.hanas_blocks.block.custom.ModVerticalSlabBlock;
+import hana.hanas_blocks.block.enums.VerticalSlabType;
+import hana.hanas_blocks.property.ModProperties;
+import hana.hanas_blocks.registry.NarrowLogRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 
 import hana.hanas_blocks.item.ModItems;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+import static hana.hanas_blocks.HanasBlocks.MOD_ID;
 import static hana.hanas_blocks.block.ModBlocks.*;
+import static net.minecraft.block.Blocks.GLASS;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -23,6 +30,10 @@ public class ModModelProvider extends FabricModelProvider {
     //public static TextureMap hanaflowerbed(Block block) {
     //    return new TextureMap().put(TextureKey.FLOWERBED, TextureMap.getId(block)).put(TextureKey.STEM, TextureMap.getSubId(block, "_stem"));
     //}
+
+    private static final String TOP_SUFFIX = "_top";
+    private static final String SIDE_SUFFIX = "_side";
+    private static final String BOTTOM_SUFFIX = "_bottom";
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -49,42 +60,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSingleton(ModBlocks.BAMBOO_PLANK_BOOKSHELF, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerSingleton(ModBlocks.WARPED_PLANK_BOOKSHELF, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerSingleton(ModBlocks.CRIMSON_PLANK_BOOKSHELF, TexturedModel.CUBE_COLUMN);
-        blockStateModelGenerator.registerSingleton(ModBlocks.MAHOGANY_PLANK_BOOKSHELF, TexturedModel.CUBE_COLUMN);
-
-        blockStateModelGenerator.registerSimpleCubeAll(LOW_QUALITY_PEARLARIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(DEEPSLATE_PEARLARIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_ALLOY_SHEET_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(RAW_PEARLARIUM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(PEARLARIUM_CRYSTAL_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool pearlarium_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(PEARLARIUM_BLOCK);
-        pearlarium_Pool.slab(PEARLARIUM_SLAB);
-        pearlarium_Pool.stairs(PEARLARIUM_STAIRS);
-        pearlarium_Pool.wall(PEARLARIUM_WALL);
-        blockStateModelGenerator.registerTrapdoor(PEARLARIUM_TRAPDOOR);
-        blockStateModelGenerator.registerTrapdoor(NIGRUM_PETRAMIUNIUM_TRAPDOOR);
-
-        Identifier pearllampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.PEARLARIUM_LAMP, blockStateModelGenerator.modelCollector);
-        Identifier pearllampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.PEARLARIUM_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.PEARLARIUM_LAMP)
-                .coordinate(BlockStateModelGenerator.createBooleanModelMap(ModLampBlock.CLICKED, pearllampOnIdentifier, pearllampOffIdentifier)));
-
-        blockStateModelGenerator.registerSimpleCubeAll(LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(RAW_NIGRUM_PETRAMIUNIUM_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK);
-        BlockStateModelGenerator.BlockTexturePool nigrum_petramiumium_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(NIGRUM_PETRAMIUNIUM_BLOCK);
-        nigrum_petramiumium_Pool.slab(NIGRUM_PETRAMIUNIUM_SLAB);
-        nigrum_petramiumium_Pool.stairs(NIGRUM_PETRAMIUNIUM_STAIRS);
-        nigrum_petramiumium_Pool.wall(NIGRUM_PETRAMIUNIUM_WALL);
-
-        Identifier nigrumpetraminiumlampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP, blockStateModelGenerator.modelCollector);
-        Identifier nigrumpetraminiumlampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.NIGRUM_PETRAMIUNIUM_LAMP)
-                .coordinate(BlockStateModelGenerator.createBooleanModelMap(ModLampBlock.CLICKED, nigrumpetraminiumlampOnIdentifier, nigrumpetraminiumlampOffIdentifier)));
-
 
         blockStateModelGenerator.registerSimpleCubeAll(RAW_SCRAP_BLOCK);
         
@@ -101,7 +76,6 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParented(EXPOSED_COPPER_SHEET_BLOCK, WAXED_EXPOSED_COPPER_SHEET_BLOCK);
         blockStateModelGenerator.registerParented(WEATHERED_COPPER_SHEET_BLOCK, WAXED_WEATHERED_COPPER_SHEET_BLOCK);
         blockStateModelGenerator.registerParented(OXIDIZED_COPPER_SHEET_BLOCK, WAXED_OXIDIZED_COPPER_SHEET_BLOCK);
-
 
         blockStateModelGenerator.registerCubeAllModelTexturePool(ANCIENT_NETHERITE_BRICK).family(FAMILY_ANCIENT_NETHERITE_BRICK).parented(ANCIENT_NETHERITE_BRICK, SEALED_ANCIENT_NETHERITE_BRICK).family(FAMILY_SEALED_ANCIENT_NETHERITE_BRICK);
         blockStateModelGenerator.registerCubeAllModelTexturePool(DULL_ANCIENT_NETHERITE_BRICK).family(FAMILY_DULL_ANCIENT_NETHERITE_BRICK).parented(DULL_ANCIENT_NETHERITE_BRICK, SEALED_DULL_ANCIENT_NETHERITE_BRICK).family(FAMILY_SEALED_DULL_ANCIENT_NETHERITE_BRICK);
@@ -312,180 +286,155 @@ public class ModModelProvider extends FabricModelProvider {
         
         blockStateModelGenerator.registerSimpleCubeAll(TRANSGENDER_BLOCK);
 
-        blockStateModelGenerator.registerFlowerPotPlant(GLOWING_WISTERIA, POTTED_GLOWING_WISTERIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ACONITE, POTTED_ACONITE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(RED_ROSE, POTTED_RED_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(YELLOW_ROSE, POTTED_YELLOW_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(BLUE_ASTER, POTTED_BLUE_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(INDIGO_ASTER, POTTED_INDIGO_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PINK_ASTER, POTTED_PINK_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(VIOLET_ASTER, POTTED_VIOLET_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(WHITE_ASTER, POTTED_WHITE_ASTER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(CYCLAMEN, POTTED_CYCLAMEN, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(DUSTY_MILLER, POTTED_DUSTY_MILLER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(BLUE_FLOSSFLOWER, POTTED_BLUE_FLOSSFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(MAGENTA_FLOSSFLOWER, POTTED_MAGENTA_FLOSSFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PINK_FLOSSFLOWER, POTTED_PINK_FLOSSFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(WHITE_FLOSSFLOWER, POTTED_WHITE_FLOSSFLOWER, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(GLOBE_THISTLE, POTTED_GLOBE_THISTLE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(BUTTERCUP, POTTED_BUTTERCUP, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PINK_DAISY, POTTED_PINK_DAISY, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(YELLOW_DAISY, POTTED_YELLOW_DAISY, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(WHITE_DAISY, POTTED_WHITE_DAISY, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(SILVER_MOUND_ARTEMISIA, POTTED_SILVER_MOUND_ARTEMISIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(SOFT_PINK_HELIOTROPE, POTTED_SOFT_PINK_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(PINK_HELIOTROPE, POTTED_PINK_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(WHITE_HELIOTROPE, POTTED_WHITE_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(TRANS_HELIOTROPE, POTTED_TRANS_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(VIOLET_HELIOTROPE, POTTED_VIOLET_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ORANGE_HELIOTROPE, POTTED_ORANGE_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(BLACK_HELIOTROPE, POTTED_BLACK_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(ICE_HELIOTROPE, POTTED_ICE_HELIOTROPE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(GOMPHRENA, POTTED_GOMPHRENA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerTintableCross(GOMPHRENA_PATCH, BlockStateModelGenerator.TintType.TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(DAHLIA, POTTED_DAHLIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(BLOODROOT, POTTED_BLOODROOT, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerDoubleBlock(FOUNTAIN_GRASS, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerDoubleBlock(FOXGLOVE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.OAK_PLANKS, ModBlocks.OAK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.SPRUCE_PLANKS, ModBlocks.SPRUCE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.BIRCH_PLANKS, ModBlocks.BIRCH_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.JUNGLE_PLANKS, ModBlocks.JUNGLE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.ACACIA_PLANKS, ModBlocks.ACACIA_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.DARK_OAK_PLANKS, ModBlocks.DARK_OAK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.MANGROVE_PLANKS, ModBlocks.MANGROVE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.CHERRY_PLANKS, ModBlocks.CHERRY_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.BAMBOO_PLANKS, ModBlocks.BAMBOO_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.BAMBOO_MOSAIC, ModBlocks.BAMBOO_MOSAIC_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.CRIMSON_PLANKS, ModBlocks.CRIMSON_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.WARPED_PLANKS, ModBlocks.WARPED_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.STONE, ModBlocks.STONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.COBBLESTONE, ModBlocks.COBBLESTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.MOSSY_COBBLESTONE, ModBlocks.MOSSY_COBBLESTONE_VERTICAL_SLAB);
+        registerSmoothStone(blockStateModelGenerator);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.STONE_BRICKS, ModBlocks.STONE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.MOSSY_STONE_BRICKS, ModBlocks.MOSSY_STONE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.GRANITE, ModBlocks.GRANITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_GRANITE, ModBlocks.POLISHED_GRANITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.DIORITE, ModBlocks.DIORITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_DIORITE, ModBlocks.POLISHED_DIORITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.ANDESITE, ModBlocks.ANDESITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_ANDESITE, ModBlocks.POLISHED_ANDESITE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.COBBLED_DEEPSLATE, ModBlocks.COBBLED_DEEPSLATE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_DEEPSLATE, ModBlocks.POLISHED_DEEPSLATE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.DEEPSLATE_BRICKS, ModBlocks.DEEPSLATE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.DEEPSLATE_TILES, ModBlocks.DEEPSLATE_TILE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.TUFF, ModBlocks.TUFF_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_TUFF, ModBlocks.POLISHED_TUFF_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.TUFF_BRICKS, ModBlocks.TUFF_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.BRICKS, ModBlocks.BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.MUD_BRICKS, ModBlocks.MUD_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.SANDSTONE, Blocks.SANDSTONE, TOP_SUFFIX, "", BOTTOM_SUFFIX, ModBlocks.SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.SANDSTONE, Blocks.SMOOTH_SANDSTONE, TOP_SUFFIX, ModBlocks.SMOOTH_SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModelForCutSandstone(blockStateModelGenerator, Blocks.CUT_SANDSTONE, Blocks.SANDSTONE, ModBlocks.CUT_SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE, TOP_SUFFIX, "", BOTTOM_SUFFIX, ModBlocks.RED_SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.RED_SANDSTONE, Blocks.SMOOTH_RED_SANDSTONE, TOP_SUFFIX, ModBlocks.SMOOTH_RED_SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModelForCutSandstone(blockStateModelGenerator, Blocks.CUT_RED_SANDSTONE, Blocks.RED_SANDSTONE, ModBlocks.CUT_RED_SANDSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.PRISMARINE, ModBlocks.PRISMARINE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.PRISMARINE_BRICKS, ModBlocks.PRISMARINE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.DARK_PRISMARINE, ModBlocks.DARK_PRISMARINE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.NETHER_BRICKS, ModBlocks.NETHER_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.RED_NETHER_BRICKS, ModBlocks.RED_NETHER_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.BLACKSTONE, ModBlocks.BLACKSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_BLACKSTONE, ModBlocks.POLISHED_BLACKSTONE_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.POLISHED_BLACKSTONE_BRICKS, ModBlocks.POLISHED_BLACKSTONE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.END_STONE_BRICKS, ModBlocks.END_STONE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.PURPUR_BLOCK, ModBlocks.PURPUR_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.QUARTZ_BLOCK, Blocks.QUARTZ_BLOCK, TOP_SUFFIX, SIDE_SUFFIX, TOP_SUFFIX, ModBlocks.QUARTZ_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.QUARTZ_BLOCK, Blocks.SMOOTH_QUARTZ, BOTTOM_SUFFIX, ModBlocks.SMOOTH_QUARTZ_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.CUT_COPPER, ModBlocks.CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.EXPOSED_CUT_COPPER, ModBlocks.EXPOSED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.WEATHERED_CUT_COPPER, ModBlocks.WEATHERED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.OXIDIZED_CUT_COPPER, ModBlocks.OXIDIZED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.CUT_COPPER, ModBlocks.WAXED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.EXPOSED_CUT_COPPER, ModBlocks.WAXED_EXPOSED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.WEATHERED_CUT_COPPER, ModBlocks.WAXED_WEATHERED_CUT_COPPER_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, Blocks.OXIDIZED_CUT_COPPER, ModBlocks.WAXED_OXIDIZED_CUT_COPPER_VERTICAL_SLAB);
 
-        blockStateModelGenerator.registerFlowerbed(ModBlocks.VIOLET_AUBRIETA);
-        
-        blockStateModelGenerator.registerFlowerPotPlant(SCULK_TENDRIL, POTTED_SCULK_TENDRIL, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(SCULK_ROSE, POTTED_SCULK_ROSE, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(GLOWING_SCULK_WISTERIA, POTTED_GLOWING_SCULK_WISTERIA, BlockStateModelGenerator.TintType.NOT_TINTED);
-        blockStateModelGenerator.registerFlowerPotPlant(GLOWING_SCULK_WISTERIA_BUNDLE, POTTED_GLOWING_SCULK_WISTERIA_BUNDLE, BlockStateModelGenerator.TintType.NOT_TINTED);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, ANCIENT_NETHERITE_BRICK, ModBlocks.ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, DULL_ANCIENT_NETHERITE_BRICK, ModBlocks.DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, TARNISHED_ANCIENT_NETHERITE_BRICK, ModBlocks.TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, RUINED_ANCIENT_NETHERITE_BRICK, ModBlocks.RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, ANCIENT_NETHERITE_BRICK, ModBlocks.SEALED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, DULL_ANCIENT_NETHERITE_BRICK, ModBlocks.SEALED_DULL_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, TARNISHED_ANCIENT_NETHERITE_BRICK, ModBlocks.SEALED_TARNISHED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
+        generateVerticalSlabBlockModel(blockStateModelGenerator, RUINED_ANCIENT_NETHERITE_BRICK, ModBlocks.SEALED_RUINED_ANCIENT_NETHERITE_BRICK_VERTICAL_SLAB);
 
-        //blockStateModelGenerator.registerSimpleState(ModBlocks.SCULK_TABLE);
-
-        blockStateModelGenerator.registerLog(MAHOGANY_LOG).log(MAHOGANY_LOG).wood(MAHOGANY_WOOD);
-        blockStateModelGenerator.registerLog(STRIPPED_MAHOGANY_LOG).log(STRIPPED_MAHOGANY_LOG).wood(STRIPPED_MAHOGANY_WOOD);
-        BlockStateModelGenerator.BlockTexturePool mahogany_Pool = blockStateModelGenerator.registerCubeAllModelTexturePool(MAHOGANY_PLANKS);
-        mahogany_Pool.slab(MAHOGANY_SLAB);
-        mahogany_Pool.stairs(MAHOGANY_STAIRS);
-        mahogany_Pool.fence(MAHOGANY_FENCE);
-        mahogany_Pool.fenceGate(MAHOGANY_FENCE_GATE);
-
-        mahogany_Pool.button(ModBlocks.MAHOGANY_BUTTON);
-        mahogany_Pool.pressurePlate(ModBlocks.MAHOGANY_PLATE);
-
-        blockStateModelGenerator.registerTrapdoor(ModBlocks.MAHOGANY_TRAPDOOR);
-        blockStateModelGenerator.registerDoor(ModBlocks.MAHOGANY_DOOR);
-
-        blockStateModelGenerator.registerSingleton(MAHOGANY_LEAVES, TexturedModel.LEAVES);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.WHITE_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ORANGE_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.MAGENTA_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LIGHT_BLUE_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.YELLOW_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LIME_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PINK_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GRAY_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LIGHT_GRAY_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CYAN_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PURPLE_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BROWN_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GREEN_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RED_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BLACK_BLAHAJ, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.NEON_PINK_BLAHAJ, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.PEARLARIUM_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_BLAHAJ, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.PRIDE_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TRANSGENDER_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DEMIBOY_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.DEMIGIRL_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GENDERFLUID_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NON_BINARY_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.POLYGENDER_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LESBIAN_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.GAY_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PANSEXUAL_BLAHAJ, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BISEXUAL_BLAHAJ, Models.GENERATED);
-
         itemModelGenerator.register(ModItems.COPPER_SHEET, Models.GENERATED);
         itemModelGenerator.register(ModItems.IRON_SHEET, Models.GENERATED);
         itemModelGenerator.register(ModItems.GOLD_SHEET, Models.GENERATED);
         itemModelGenerator.register(ModItems.SCRAP_SHEET, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.RAW_PEARLARIUM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_SHEET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PEARLARIUM_CRYSTAL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRUSHED_PEARLARIUM, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.RAW_NIGRUM_PETRAMIUNIUM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_PLATE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.NIGRUM_PETRAMIUNIUM_CRYSTAL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CRUSHED_NIGRUM_PETRAMIUNIUM, Models.GENERATED);
-
-        //itemModelGenerator.register(ModItems.PEARLARIUM_PLATED_SHIELD, Models.GENERATED);
-
         itemModelGenerator.register(ModItems.SCULK_MATERIAL, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TOMATO_BREAD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BUNS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.HAMBURGER, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_HOE, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_LONGSWORD, Models.HANDHELD);
-
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.PEARLARIUM_ALLOY_PLATE_HOE, Models.HANDHELD);
-
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SWORD, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PICKAXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_SHOVEL, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_AXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_HOE, Models.HANDHELD);
-
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SWORD, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_PICKAXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_SHOVEL, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_AXE, Models.HANDHELD);
-        //itemModelGenerator.register(ModItems.NIGRUM_PETRAMINIUM_ALLOY_PLATE_HOE, Models.HANDHELD);
-
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_BOOTS));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_HELMET));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_CHESTPLATE));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_LEGGINGS));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.PEARLARIUM_PLATE_BOOTS));
-
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMIUNIUM_BOOTS));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_HELMET));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_CHESTPLATE));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_LEGGINGS));
-        //itemModelGenerator.registerArmor(((ArmorItem) ModItems.NIGRUM_PETRAMINIUM_PLATE_BOOTS));
-
-        itemModelGenerator.register(ModItems.PEARLARIUM_HORSE_ARMOR, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.SHOCK_SMITHING_TEMPLATE, Models.GENERATED);
-
     }
+
+    private void registerSmoothStone(BlockStateModelGenerator blockStateModelGenerator) {
+        TextureMap textureMap = new TextureMap().put(TextureKey.TOP, TextureMap.getId(Blocks.SMOOTH_STONE))
+                .put(TextureKey.SIDE, TextureMap.getId(Blocks.SMOOTH_STONE_SLAB).withSuffixedPath("_side"))
+                .put(TextureKey.BOTTOM, TextureMap.getId(Blocks.SMOOTH_STONE))
+                .put(TextureKey.PARTICLE, TextureMap.getId(Blocks.SMOOTH_STONE));
+        TextureMap textureMap2 = TextureMap.sideEnd(TextureMap.getSubId(Blocks.SMOOTH_STONE_SLAB, "_side"), textureMap.getTexture(TextureKey.TOP));
+
+        Identifier modelId = ModModels.VERTICAL_SLAB.upload(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, textureMap, blockStateModelGenerator.modelCollector);
+        Identifier leftModelId = ModModels.VERTICAL_SLAB_LEFT.upload(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, "_left", textureMap, blockStateModelGenerator.modelCollector);
+        Identifier rightModelId = ModModels.VERTICAL_SLAB_RIGHT.upload(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, "_right", textureMap, blockStateModelGenerator.modelCollector);
+        Identifier backModelId = ModModels.VERTICAL_SLAB_BACK.upload(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, "_back", textureMap, blockStateModelGenerator.modelCollector);
+        Identifier fullBlockId = Models.CUBE_COLUMN.uploadWithoutVariant(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, "_double", textureMap2, blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(createVerticalSlabBlockState(ModBlocks.SMOOTH_STONE_VERTICAL_SLAB, modelId, leftModelId, rightModelId, backModelId, fullBlockId));
+    }
+
+    private void generateVerticalSlabBlockModel(BlockStateModelGenerator blockStateModelGenerator, Block textureBlock, Block block) {
+        TextureMap textureMap = new TextureMap().put(TextureKey.TOP, TextureMap.getId(textureBlock))
+                .put(TextureKey.SIDE, TextureMap.getId(textureBlock))
+                .put(TextureKey.BOTTOM, TextureMap.getId(textureBlock))
+                .put(TextureKey.PARTICLE, TextureMap.getId(textureBlock));
+
+        generateVerticalSlabBlockModel(blockStateModelGenerator, textureMap, textureBlock, block);
+    }
+
+    private void generateVerticalSlabBlockModel(BlockStateModelGenerator blockStateModelGenerator, Block textureBlock, Block fullBlock, String suffix, Block block) {
+        generateVerticalSlabBlockModel(blockStateModelGenerator, textureBlock, fullBlock, suffix, suffix, suffix, block);
+    }
+
+    private void generateVerticalSlabBlockModel(BlockStateModelGenerator blockStateModelGenerator, Block textureBlock, Block fullBlock, String topSuffix, String sideSuffix, String bottomSuffix, Block block) {
+        TextureMap textureMap = new TextureMap().put(TextureKey.TOP, TextureMap.getId(textureBlock).withSuffixedPath(topSuffix))
+                .put(TextureKey.SIDE, TextureMap.getId(textureBlock).withSuffixedPath(sideSuffix))
+                .put(TextureKey.BOTTOM, TextureMap.getId(textureBlock).withSuffixedPath(bottomSuffix))
+                .put(TextureKey.PARTICLE, TextureMap.getId(textureBlock).withSuffixedPath(topSuffix));
+
+        generateVerticalSlabBlockModel(blockStateModelGenerator, textureMap, fullBlock, block);
+    }
+
+    private void generateVerticalSlabBlockModelForCutSandstone(BlockStateModelGenerator blockStateModelGenerator, Block textureBlock, Block secondTextureBlock, Block block) {
+        TextureMap textureMap = new TextureMap().put(TextureKey.TOP, TextureMap.getId(secondTextureBlock).withSuffixedPath(TOP_SUFFIX))
+                .put(TextureKey.SIDE, TextureMap.getId(textureBlock))
+                .put(TextureKey.BOTTOM, TextureMap.getId(secondTextureBlock).withSuffixedPath(BOTTOM_SUFFIX))
+                .put(TextureKey.PARTICLE, TextureMap.getId(textureBlock));
+
+        generateVerticalSlabBlockModel(blockStateModelGenerator, textureMap, textureBlock, block);
+    }
+
+    private void generateVerticalSlabBlockModel(BlockStateModelGenerator blockStateModelGenerator, TextureMap textureMap, Block fullBlock, Block block) {
+        Identifier modelId = ModModels.VERTICAL_SLAB.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+        Identifier leftModelId = ModModels.VERTICAL_SLAB_LEFT.upload(block, "_left", textureMap, blockStateModelGenerator.modelCollector);
+        Identifier rightModelId = ModModels.VERTICAL_SLAB_RIGHT.upload(block, "_right", textureMap, blockStateModelGenerator.modelCollector);
+        Identifier backModelId = ModModels.VERTICAL_SLAB_BACK.upload(block, "_back", textureMap, blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(createVerticalSlabBlockState(block, modelId, leftModelId, rightModelId, backModelId, TextureMap.getId(fullBlock)));
+    }
+
+    public static BlockStateSupplier createVerticalSlabBlockState(Block verticalSlabBlock, Identifier modelId,
+                                                                  Identifier leftModelId, Identifier rightModelId, Identifier backModelId, Identifier fullModelId) {
+        return VariantsBlockStateSupplier.create(verticalSlabBlock)
+                .coordinate(
+                        BlockStateVariantMap.create(ModProperties.VERTICAL_SLAB_TYPE)
+                                .register(VerticalSlabType.FRONT, BlockStateVariant.create().put(VariantSettings.MODEL, modelId))
+                                .register(VerticalSlabType.LEFT, BlockStateVariant.create().put(VariantSettings.MODEL, leftModelId))
+                                .register(VerticalSlabType.RIGHT, BlockStateVariant.create().put(VariantSettings.MODEL, rightModelId))
+                                .register(VerticalSlabType.BACK, BlockStateVariant.create().put(VariantSettings.MODEL, backModelId))
+                                .register(VerticalSlabType.DOUBLE, BlockStateVariant.create().put(VariantSettings.MODEL, fullModelId))
+                );
+    }
+
 }

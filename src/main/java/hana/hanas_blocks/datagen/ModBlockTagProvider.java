@@ -20,65 +20,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(ModTags.Blocks.WEAPON_EFFICIENT)
-                .add(Blocks.COBWEB)
-                //.addTag(BlockTags.SWORD_EFFICIENT)
-                //.addTag(BlockTags.SAPLINGS)
-                //.addTag(BlockTags.SMALL_FLOWERS)
-                //.addTag(BlockTags.CROPS)
-                .add(
-                        Blocks.SHORT_GRASS,
-                        Blocks.FERN,
-                        Blocks.DEAD_BUSH,
-                        Blocks.VINE,
-                        Blocks.GLOW_LICHEN,
-                        Blocks.SUNFLOWER,
-                        Blocks.LILAC,
-                        Blocks.ROSE_BUSH,
-                        Blocks.PEONY,
-                        Blocks.TALL_GRASS,
-                        Blocks.LARGE_FERN,
-                        Blocks.HANGING_ROOTS,
-                        Blocks.PITCHER_PLANT
-                )
-                .add(
-                        Blocks.BROWN_MUSHROOM,
-                        Blocks.RED_MUSHROOM,
-                        Blocks.SUGAR_CANE,
-                        Blocks.PUMPKIN,
-                        Blocks.CARVED_PUMPKIN,
-                        Blocks.JACK_O_LANTERN,
-                        Blocks.MELON,
-                        Blocks.ATTACHED_PUMPKIN_STEM,
-                        Blocks.ATTACHED_MELON_STEM,
-                        Blocks.LILY_PAD,
-                        Blocks.COCOA,
-                        Blocks.PITCHER_CROP,
-                        Blocks.SWEET_BERRY_BUSH,
-                        Blocks.CAVE_VINES,
-                        Blocks.CAVE_VINES_PLANT,
-                        Blocks.SPORE_BLOSSOM,
-                        Blocks.MOSS_CARPET,
-                        Blocks.PINK_PETALS,
-                        Blocks.BIG_DRIPLEAF,
-                        Blocks.BIG_DRIPLEAF_STEM,
-                        Blocks.SMALL_DRIPLEAF
-                )
-                .add(
-                        Blocks.NETHER_WART,
-                        Blocks.WARPED_FUNGUS,
-                        Blocks.WARPED_ROOTS,
-                        Blocks.NETHER_SPROUTS,
-                        Blocks.CRIMSON_FUNGUS,
-                        Blocks.WEEPING_VINES,
-                        Blocks.WEEPING_VINES_PLANT,
-                        Blocks.TWISTING_VINES,
-                        Blocks.TWISTING_VINES_PLANT,
-                        Blocks.CRIMSON_ROOTS
-                )
-                .add(
-                        Blocks.CHORUS_PLANT,
-                        Blocks.CHORUS_FLOWER);
         getOrCreateTagBuilder(ModTags.Blocks.SCULK_PLANTABLE_BLOCKS)
             .add(Blocks.SCULK)
             .add(Blocks.SCULK_CATALYST)
@@ -223,27 +164,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.CUT_CRYSTAL_AMETHYST)
             .add(ModBlocks.IRON_SHEET_BLOCK)
             .add(ModBlocks.GOLD_SHEET_BLOCK)
-            .add(ModBlocks.RAW_QUARTZ_BLOCK)
-            .add(ModBlocks.LOW_QUALITY_PEARLARIUM_ORE)
-            .add(ModBlocks.PEARLARIUM_ORE)
-            .add(ModBlocks.DEEPSLATE_PEARLARIUM_ORE)
-            .add(ModBlocks.PEARLARIUM_CRYSTAL_BLOCK)
-            .add(ModBlocks.PEARLARIUM_ALLOY_SHEET_BLOCK)
-            .add(ModBlocks.PEARLARIUM_BLOCK)
-            .add(ModBlocks.PEARLARIUM_SLAB)
-            .add(ModBlocks.PEARLARIUM_STAIRS)
-            .add(ModBlocks.PEARLARIUM_WALL)
-            .add(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_ORE)
-            .add(ModBlocks.DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_STAIRS)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_WALL);
+            .add(ModBlocks.RAW_QUARTZ_BLOCK);
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
-            .add(ModBlocks.SCULK_FLORA)
             .add(ModBlocks.SCULKED_DEEPSLATE)
             .add(ModBlocks.SCULKED_COBBLED_DEEPSLATE)
             .add(ModBlocks.SCULKED_DEEPSLATE_BRICK)
@@ -269,17 +191,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.MANGROVE_PLANK_BOOKSHELF)
             .add(ModBlocks.BAMBOO_PLANK_BOOKSHELF)
             .add(ModBlocks.WARPED_PLANK_BOOKSHELF)
-            .add(ModBlocks.CRIMSON_PLANK_BOOKSHELF)
-            .add(ModBlocks.MAHOGANY_PLANK_BOOKSHELF)
-            .add(ModBlocks.MAHOGANY_LOG)
-            .add(ModBlocks.MAHOGANY_WOOD)
-            .add(ModBlocks.STRIPPED_MAHOGANY_LOG)
-            .add(ModBlocks.STRIPPED_MAHOGANY_WOOD)
-            .add(ModBlocks.MAHOGANY_PLANKS)
-            .add(ModBlocks.MAHOGANY_SLAB)
-            .add(ModBlocks.MAHOGANY_STAIRS)
-            .add(ModBlocks.MAHOGANY_FENCE)
-            .add(ModBlocks.MAHOGANY_FENCE_GATE);
+            .add(ModBlocks.CRIMSON_PLANK_BOOKSHELF);
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
             .add(ModBlocks.DIRTY_SAND)
             .add(ModBlocks.DIRTY_SAND_STAIRS)
@@ -373,7 +285,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.GOLD_SHEET_BLOCK)
             .add(ModBlocks.RAW_QUARTZ_BLOCK);
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-            .add(ModBlocks.SCULK_FLORA)
             .add(ModBlocks.SCULKED_DEEPSLATE)
             .add(ModBlocks.SCULKED_COBBLED_DEEPSLATE)
             .add(ModBlocks.SCULKED_DEEPSLATE_BRICK)
@@ -385,35 +296,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.SCULKED_END_STONE_BRICK)
             .add(ModBlocks.SCULKED_POLISHED_END_STONE);
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-            .add(ModBlocks.PEARLARIUM_CRYSTAL_BLOCK)
-            .add(ModBlocks.PEARLARIUM_ALLOY_SHEET_BLOCK)
-            .add(ModBlocks.PEARLARIUM_BLOCK)
-            .add(ModBlocks.PEARLARIUM_SLAB)
-            .add(ModBlocks.PEARLARIUM_STAIRS)
-            .add(ModBlocks.PEARLARIUM_WALL)
-            .add(ModBlocks.PEARLARIUM_TRAPDOOR)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_CRYSTAL_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_ALLOY_SHEET_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_BLOCK)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_SLAB)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_STAIRS)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_WALL);
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
             .add(ModBlocks.SCRAP_SHEET_BLOCK)
             .add(ModBlocks.RAW_SCRAP_BLOCK);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")))
-            .add(ModBlocks.LOW_QUALITY_PEARLARIUM_ORE)
-            .add(ModBlocks.PEARLARIUM_ORE)
-            .add(ModBlocks.DEEPSLATE_PEARLARIUM_ORE)
-            .add(ModBlocks.LOW_QUALITY_NIGRUM_PETRAMIUNIUM_ORE)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_ORE)
-            .add(ModBlocks.DEEPSLATE_NIGRUM_PETRAMIUNIUM_ORE);
-
-        getOrCreateTagBuilder(BlockTags.FENCES)
-            .add(ModBlocks.MAHOGANY_FENCE);
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES)
-            .add(ModBlocks.MAHOGANY_FENCE_GATE);
+        getOrCreateTagBuilder(BlockTags.FENCES);
+        getOrCreateTagBuilder(BlockTags.FENCE_GATES);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
             .add(ModBlocks.SMOOTH_STONE_WALL)
@@ -446,8 +333,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.SMOOTHED_BASALT_WALL)
             .add(ModBlocks.POLISHED_BASALT_BRICK_WALL)
             .add(ModBlocks.POLISHED_END_STONE_WALL)
-            .add(ModBlocks.PEARLARIUM_WALL)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_WALL)
             .add(ModBlocks.HONEY_COMB_BRICK_WALL)
             .add(ModBlocks.DIRTY_SAND_WALL)
             .add(ModBlocks.SMOOTH_SANDSTONE_WALL)
@@ -464,44 +349,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.SEALED_TARNISHED_ANCIENT_NETHERITE_BRICK_WALL)
             .add(ModBlocks.SEALED_RUINED_ANCIENT_NETHERITE_BRICK_WALL)
             ;
-        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
-            .add(ModBlocks.MAHOGANY_LOG)
-            .add(ModBlocks.MAHOGANY_WOOD)
-            .add(ModBlocks.STRIPPED_MAHOGANY_LOG)
-            .add(ModBlocks.STRIPPED_MAHOGANY_WOOD);
-        getOrCreateTagBuilder((BlockTags.FLOWERS))
-            .add(ModBlocks.GLOWING_WISTERIA)
-            .add(ModBlocks.ACONITE)
-            .add(ModBlocks.RED_ROSE)
-            .add(ModBlocks.BLUE_ASTER)
-            .add(ModBlocks.INDIGO_ASTER)
-            .add(ModBlocks.PINK_ASTER)
-            .add(ModBlocks.VIOLET_ASTER)
-            .add(ModBlocks.WHITE_ASTER)
-            .add(ModBlocks.CYCLAMEN)
-            .add(ModBlocks.DUSTY_MILLER)
-            .add(ModBlocks.BLUE_FLOSSFLOWER)
-            .add(ModBlocks.MAGENTA_FLOSSFLOWER)
-            .add(ModBlocks.PINK_FLOSSFLOWER)
-            .add(ModBlocks.WHITE_FLOSSFLOWER)
-            .add(ModBlocks.GLOBE_THISTLE)
-            .add(ModBlocks.BUTTERCUP)
-            .add(ModBlocks.PINK_DAISY)
-            .add(ModBlocks.YELLOW_DAISY)
-            .add(ModBlocks.WHITE_DAISY)
-            .add(ModBlocks.SILVER_MOUND_ARTEMISIA)
-            .add(ModBlocks.SOFT_PINK_HELIOTROPE)
-            .add(ModBlocks.PINK_HELIOTROPE)
-            .add(ModBlocks.WHITE_HELIOTROPE)
-            .add(ModBlocks.TRANS_HELIOTROPE)
-            .add(ModBlocks.VIOLET_HELIOTROPE)
-            .add(ModBlocks.ORANGE_HELIOTROPE)
-            .add(ModBlocks.BLACK_HELIOTROPE)
-            .add(ModBlocks.ICE_HELIOTROPE)
-            .add(ModBlocks.GOMPHRENA)
-            .add(ModBlocks.GOMPHRENA_PATCH)
-            .add(ModBlocks.DAHLIA)
-            .add(ModBlocks.BLOODROOT);
         getOrCreateTagBuilder(ModTags.Blocks.WATER_PLANT_PLANTABLE_BLOCKS)
             .add(Blocks.DIRT)
             .add(Blocks.COARSE_DIRT)
@@ -512,8 +359,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(Blocks.SUSPICIOUS_SAND)
             .add(Blocks.STONE);
         getOrCreateTagBuilder((BlockTags.TRAPDOORS))
-            .add(ModBlocks.PEARLARIUM_TRAPDOOR)
-            .add(ModBlocks.NIGRUM_PETRAMIUNIUM_TRAPDOOR);
+            ;
         getOrCreateTagBuilder(BlockTags.ENCHANTMENT_POWER_PROVIDER)
             .add(ModBlocks.OAK_PLANK_BOOKSHELF)
             .add(ModBlocks.SPRUCE_PLANK_BOOKSHELF)
@@ -526,7 +372,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.BAMBOO_PLANK_BOOKSHELF)
             .add(ModBlocks.WARPED_PLANK_BOOKSHELF)
             .add(ModBlocks.CRIMSON_PLANK_BOOKSHELF)
-            .add(ModBlocks.MAHOGANY_PLANK_BOOKSHELF)
         ;
         getOrCreateTagBuilder(ModTags.Blocks.NEEDS_PEARLARIUM_TOOL)
             .add(ModBlocks.ANCIENT_NETHERITE_BRICK);

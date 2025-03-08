@@ -3,6 +3,7 @@ package hana.hanas_blocks.util;
 import hana.hanas_blocks.HanasBlocks;
 import net.minecraft.block.Block;
 //import net.minecraft.item.Item;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -10,6 +11,10 @@ import net.minecraft.util.Identifier;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> WATER_PLANT_CAN_SURVIVE_ON =
+                createTag("water_plant_can_survive_on");
+        public static final TagKey<Block> SHRUB_CAN_SURVIVE_ON =
+                createTag("shrub_can_survive_on");
         public static final TagKey<Block> SCULK_PLANTABLE_BLOCKS =
                 createTag("sculk_plantable_blocks");
         public static final TagKey<Block> WATER_PLANT_PLANTABLE_BLOCKS =
@@ -27,10 +32,11 @@ public class ModTags {
         public static final TagKey<Block> INCORRECT_FOR_PEARLARIUM_TOOL = createTag("incorrect_for_pearlarium_tool");
         public static final TagKey<Block> INCORRECT_FOR_PEARLARIUM_PLATE_TOOL = createTag("incorrect_for_pearlarium_plate_tool");
         public static final TagKey<Block> INCORRECT_FOR_NIGRUM_PETRAMIUNIUM_TOOL = createTag("incorrect_for_nigrum_petramiunium_tool");
-        public static final TagKey<Block> INCORRECT_FOR_NIGRUM_PETRAMIUNIUM_PLATE_TOOL = createTag("incorrect_for_nigrum_petramiunium_tool");
+        public static final TagKey<Block> INCORRECT_FOR_NIGRUM_PETRAMIUNIUM_PLATE_TOOL = createTag("incorrect_for_nigrum_petramiunium_plate_tool");
 
 
     }
+
     public static class Items {
         public static final TagKey<Item> MATERIAL_DUST =
                 createTag("material_dust");
