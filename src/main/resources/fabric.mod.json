@@ -16,17 +16,17 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"hana.hanas_blocks.HanasBlocks"
+			"net.hana.hanas_blocks.HanasBlocks"
 		],
 		"client": [
-			"hana.hanas_blocks.HanasBlocksClient"
+			"net.hana.hanas_blocks.HanasBlocksClient"
 		],
 		"fabric-datagen": [
-			"hana.hanas_blocks.HanasBlocksDataGenerator"
+			"net.hana.hanas_blocks.HanasBlocksDataGenerator"
 		]
 	},
 	"mixins": [
-		"hanas_blocks.mixins.json"
+		"net.hana.hanas_blocks.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.7",

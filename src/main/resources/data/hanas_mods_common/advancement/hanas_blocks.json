@@ -3,7 +3,7 @@
         "title": "Hanas Blocks",
         "description": "Adds Many Building Blocks",
         "icon": {
-            "id": "hanas_blocks:cooper_sheet"
+            "id": "hanas_blocks:copper_sheet"
         },
         "show_toast": false,
         "announce_to_chat": false
