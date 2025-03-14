@@ -11,13 +11,13 @@ import net.minecraft.util.Identifier;
 
 public class ConcreteBlocks {
 
-    public static final Block RED_CONCRETE_STAIRS = registerBlock("red_conrete_stairs",
+    public static final Block RED_CONCRETE_STAIRS = registerBlock("red_concrete_stairs",
             new StairsBlock(Blocks.RED_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.RED_CONCRETE)));
-    public static final Block RED_CONCRETE_SLAB = registerBlock("red_conrete_slab",
+    public static final Block RED_CONCRETE_SLAB = registerBlock("red_concrete_slab",
             new SlabBlock(AbstractBlock.Settings.copy(Blocks.RED_CONCRETE).solid()));
-    public static final Block RED_CONCRETE_WALL = registerBlock("red_conrete_wall",
+    public static final Block RED_CONCRETE_WALL = registerBlock("red_concrete_wall",
             new WallBlock(AbstractBlock.Settings.copy(Blocks.RED_CONCRETE).solid()));
-    public static final Block RED_CONCRETE_VERTICAL_SLAB = registerBlock("red_conrete_vertical_slab",
+    public static final Block RED_CONCRETE_VERTICAL_SLAB = registerBlock("red_concrete_vertical_slab",
             new ModVerticalSlabBlock(AbstractBlock.Settings.copy(RED_CONCRETE_SLAB).nonOpaque()));
     public static final Block ORANGE_CONCRETE_STAIRS = registerBlock("orange_concrete_stairs",
             new StairsBlock(Blocks.ORANGE_CONCRETE.getDefaultState(), AbstractBlock.Settings.copy(Blocks.ORANGE_CONCRETE)));

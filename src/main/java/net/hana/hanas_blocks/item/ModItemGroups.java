@@ -138,12 +138,188 @@ public class ModItemGroups {
                         entries.add(GlassBlocks.GLASS_STAIRS);
                         entries.add(GlassBlocks.GLASS_VERTICAL_SLAB);
                         entries.add(Blocks.GLASS_PANE);
-
                         entries.add(Blocks.TINTED_GLASS);
                         entries.add(TintedGlassBlocks.TINTED_GLASS_SLAB);
                         entries.add(TintedGlassBlocks.TINTED_GLASS_STAIRS);
                         entries.add(TintedGlassBlocks.TINTED_GLASS_VERTICAL_SLAB);
                         entries.add(TintedGlassBlocks.TINTED_GLASS_PANE);
+
+                        entries.add(Blocks.RED_STAINED_GLASS);
+                        entries.add(GlassBlocks.RED_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.RED_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.RED_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.RED_STAINED_GLASS_PANE);
+                        entries.add(Blocks.ORANGE_STAINED_GLASS);
+                        entries.add(GlassBlocks.ORANGE_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.ORANGE_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.ORANGE_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.ORANGE_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.YELLOW_STAINED_GLASS);
+                        entries.add(GlassBlocks.YELLOW_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.YELLOW_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.YELLOW_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.YELLOW_STAINED_GLASS_PANE);
+                        entries.add(Blocks.LIME_STAINED_GLASS);
+                        entries.add(GlassBlocks.LIME_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.LIME_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.LIME_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.LIME_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.GREEN_STAINED_GLASS);
+                        entries.add(GlassBlocks.GREEN_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.GREEN_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.GREEN_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.GREEN_STAINED_GLASS_PANE);
+                        entries.add(Blocks.CYAN_STAINED_GLASS);
+                        entries.add(GlassBlocks.CYAN_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.CYAN_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.CYAN_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.CYAN_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.LIGHT_BLUE_STAINED_GLASS);
+                        entries.add(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.LIGHT_BLUE_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE);
+                        entries.add(Blocks.BLUE_STAINED_GLASS);
+                        entries.add(GlassBlocks.BLUE_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.BLUE_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.BLUE_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.BLUE_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.PURPLE_STAINED_GLASS);
+                        entries.add(GlassBlocks.PURPLE_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.PURPLE_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.PURPLE_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.PURPLE_STAINED_GLASS_PANE);
+                        entries.add(Blocks.MAGENTA_STAINED_GLASS);
+                        entries.add(GlassBlocks.MAGENTA_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.MAGENTA_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.MAGENTA_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.MAGENTA_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.PINK_STAINED_GLASS);
+                        entries.add(GlassBlocks.PINK_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.PINK_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.PINK_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.PINK_STAINED_GLASS_PANE);
+                        entries.add(Blocks.BROWN_STAINED_GLASS);
+                        entries.add(GlassBlocks.BROWN_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.BROWN_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.BROWN_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.BROWN_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.BLACK_STAINED_GLASS);
+                        entries.add(GlassBlocks.BLACK_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.BLACK_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.BLACK_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.BLACK_STAINED_GLASS_PANE);
+                        entries.add(Blocks.WHITE_STAINED_GLASS);
+                        entries.add(GlassBlocks.WHITE_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.WHITE_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.WHITE_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.WHITE_STAINED_GLASS_PANE);
+
+                        entries.add(Blocks.LIGHT_GRAY_STAINED_GLASS);
+                        entries.add(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.LIGHT_GRAY_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE);
+                        entries.add(Blocks.GRAY_STAINED_GLASS);
+                        entries.add(GlassBlocks.GRAY_STAINED_GLASS_SLAB);
+                        entries.add(GlassBlocks.GRAY_STAINED_GLASS_STAIRS);
+                        entries.add(GlassBlocks.GRAY_STAINED_GLASS_VERTICAL_SLAB);
+                        entries.add(Blocks.GRAY_STAINED_GLASS_PANE);
+
+
+                        entries.add(TintedGlassBlocks.RED_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_PANE);
+
+                        entries.add(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_PANE);
+                        entries.add(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS);
+                        entries.add(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_SLAB);
+                        entries.add(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_STAIRS);
+                        entries.add(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB);
+                        entries.add(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_PANE);
 
                     }).build());
 

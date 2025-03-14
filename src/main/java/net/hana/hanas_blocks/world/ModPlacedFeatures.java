@@ -20,7 +20,7 @@ public class ModPlacedFeatures {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, MARBLE_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(net.hana.hanas_blocks.world.ModConfiguredFeatures.MARBLE_ORE_KEY),
-                net.hana.hanas_blocks.world.ModOrePlacement.modifiersWithCount(2, // Veins per Chunk
+                net.hana.hanas_blocks.world.ModOrePlacement.modifiersWithCount(3, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.getBottom(), YOffset.fixed(0))));
 
     }
