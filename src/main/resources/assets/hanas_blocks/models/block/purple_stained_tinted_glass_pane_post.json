@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_glass_pane_post",
-  "textures": {
-    "edge": "hanas_blocks:block/purple_stained_tinted_glass_pane_top",
-    "pane": "hanas_blocks:block/purple_stained_tinted_glass"
-  }
-}

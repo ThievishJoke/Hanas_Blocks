@@ -1,7 +1,6 @@
 package net.hana.hanas_blocks.block;
 
 import net.hana.hanas_blocks.HanasBlocks;
-import net.hana.hanas_blocks.block.custom.glass.TintedGlassPaneBlock;
 import net.hana.hanas_blocks.block.custom.glass.TintedGlassSlabBlock;
 import net.hana.hanas_blocks.block.custom.glass.TintedGlassStairsBlock;
 import net.hana.hanas_blocks.block.custom.glass.TintedModGlassVerticalSlabBlock;
@@ -22,8 +21,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(Blocks.TINTED_GLASS).nonOpaque()));
     public static final Block TINTED_GLASS_VERTICAL_SLAB = registerBlock("tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.TINTED_GLASS_SLAB)));
-    public static final Block TINTED_GLASS_PANE = registerBlock("tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(Blocks.TINTED_GLASS)));
 
     public static final Block RED_STAINED_TINTED_GLASS = registerBlock("red_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -34,8 +31,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(RED_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block RED_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("red_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(RED_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block RED_STAINED_TINTED_GLASS_PANE = registerBlock("red_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.RED_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block ORANGE_STAINED_TINTED_GLASS = registerBlock("orange_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -46,8 +41,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(ORANGE_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block ORANGE_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("orange_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(ORANGE_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block ORANGE_STAINED_TINTED_GLASS_PANE = registerBlock("orange_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block YELLOW_STAINED_TINTED_GLASS = registerBlock("yellow_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -58,8 +51,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(YELLOW_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block YELLOW_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("yellow_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(YELLOW_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block YELLOW_STAINED_TINTED_GLASS_PANE = registerBlock("yellow_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block LIME_STAINED_TINTED_GLASS = registerBlock("lime_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -70,8 +61,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(LIME_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block LIME_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("lime_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(LIME_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block LIME_STAINED_TINTED_GLASS_PANE = registerBlock("lime_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block GREEN_STAINED_TINTED_GLASS = registerBlock("green_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -82,8 +71,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(GREEN_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block GREEN_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("green_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(GREEN_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block GREEN_STAINED_TINTED_GLASS_PANE = registerBlock("green_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block CYAN_STAINED_TINTED_GLASS = registerBlock("cyan_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -94,8 +81,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(CYAN_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block CYAN_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("cyan_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(CYAN_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block CYAN_STAINED_TINTED_GLASS_PANE = registerBlock("cyan_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block LIGHT_BLUE_STAINED_TINTED_GLASS = registerBlock("light_blue_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -106,8 +91,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(LIGHT_BLUE_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block LIGHT_BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("light_blue_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(LIGHT_BLUE_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block LIGHT_BLUE_STAINED_TINTED_GLASS_PANE = registerBlock("light_blue_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block BLUE_STAINED_TINTED_GLASS = registerBlock("blue_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -118,8 +101,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(BLUE_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block BLUE_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("blue_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(BLUE_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block BLUE_STAINED_TINTED_GLASS_PANE = registerBlock("blue_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block PURPLE_STAINED_TINTED_GLASS = registerBlock("purple_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -130,8 +111,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(PURPLE_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block PURPLE_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("purple_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(PURPLE_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block PURPLE_STAINED_TINTED_GLASS_PANE = registerBlock("purple_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block MAGENTA_STAINED_TINTED_GLASS = registerBlock("magenta_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -142,8 +121,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(MAGENTA_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block MAGENTA_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("magenta_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(MAGENTA_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block MAGENTA_STAINED_TINTED_GLASS_PANE = registerBlock("magenta_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block PINK_STAINED_TINTED_GLASS = registerBlock("pink_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -154,8 +131,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(PINK_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block PINK_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("pink_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(PINK_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block PINK_STAINED_TINTED_GLASS_PANE = registerBlock("pink_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block BROWN_STAINED_TINTED_GLASS = registerBlock("brown_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -166,8 +141,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(BROWN_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block BROWN_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("brown_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(BROWN_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block BROWN_STAINED_TINTED_GLASS_PANE = registerBlock("brown_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block BLACK_STAINED_TINTED_GLASS = registerBlock("black_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -178,8 +151,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(BLACK_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block BLACK_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("black_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(BLACK_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block BLACK_STAINED_TINTED_GLASS_PANE = registerBlock("black_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block WHITE_STAINED_TINTED_GLASS = registerBlock("white_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -190,8 +161,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(WHITE_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block WHITE_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("white_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(WHITE_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block WHITE_STAINED_TINTED_GLASS_PANE = registerBlock("white_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block GRAY_STAINED_TINTED_GLASS = registerBlock("gray_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -202,8 +171,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(GRAY_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("gray_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(GRAY_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block GRAY_STAINED_TINTED_GLASS_PANE = registerBlock("gray_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS).nonOpaque()));
 
     public static final Block LIGHT_GRAY_STAINED_TINTED_GLASS = registerBlock("light_gray_stained_tinted_glass",
             new TintedGlassBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).nonOpaque()));
@@ -214,8 +181,6 @@ public class TintedGlassBlocks {
             new TintedGlassSlabBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_STAINED_TINTED_GLASS).nonOpaque()));
     public static final Block LIGHT_GRAY_STAINED_TINTED_GLASS_VERTICAL_SLAB = registerBlock("light_gray_stained_tinted_glass_vertical_slab",
             new TintedModGlassVerticalSlabBlock(AbstractBlock.Settings.copy(LIGHT_GRAY_STAINED_TINTED_GLASS_SLAB).nonOpaque()));
-    public static final Block LIGHT_GRAY_STAINED_TINTED_GLASS_PANE = registerBlock("light_gray_stained_tinted_glass_pane",
-            new TintedGlassPaneBlock(AbstractBlock.Settings.copy(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS).nonOpaque()));
 
     static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

@@ -481,7 +481,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider{
         addDrop(TintedGlassBlocks.TINTED_GLASS_STAIRS);
         addDrop(TintedGlassBlocks.TINTED_GLASS_SLAB, slabDrops(TintedGlassBlocks.TINTED_GLASS_SLAB));
         addDrop(TintedGlassBlocks.TINTED_GLASS_VERTICAL_SLAB, slabDrops(TintedGlassBlocks.TINTED_GLASS_VERTICAL_SLAB));
-        addDrop(TintedGlassBlocks.TINTED_GLASS_PANE);
 
         addDrop(TintedGlassBlocks.RED_STAINED_TINTED_GLASS);
         addDrop(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS);
@@ -550,23 +549,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider{
         addDrop(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_VERTICAL_SLAB, slabDrops(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_VERTICAL_SLAB));
         addDrop(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_VERTICAL_SLAB, slabDrops(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_VERTICAL_SLAB));
         addDrop(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_VERTICAL_SLAB, slabDrops(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_VERTICAL_SLAB));
-
-        addDrop(TintedGlassBlocks.RED_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.ORANGE_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.YELLOW_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.LIME_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.GREEN_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.CYAN_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.LIGHT_BLUE_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.BLUE_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.PURPLE_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.MAGENTA_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.PINK_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.GRAY_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.LIGHT_GRAY_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.BLACK_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.BROWN_STAINED_TINTED_GLASS_PANE);
-        addDrop(TintedGlassBlocks.WHITE_STAINED_TINTED_GLASS_PANE);
     }
 }
 
