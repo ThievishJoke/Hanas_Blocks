@@ -19,10 +19,11 @@ public class ModModels {
     public static final Model VERTICAL_SLAB_RIGHT = block("parent/vertical_slab_right", TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE);
     public static final Model VERTICAL_SLAB_BACK = block("parent/vertical_slab_back", TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE);
 
+    /*
     public static final Model NARROW_LOG = block("parent/narrow_log", TextureKey.TOP, TextureKey.SIDE);
     public static final Model NARROW_LOG_TOP = block("parent/narrow_log_top", TextureKey.TOP, TextureKey.SIDE);
     public static final Model NARROW_LOG_SIDE = block("parent/narrow_log_side", TextureKey.TOP, TextureKey.SIDE);
-
+     */
 
     private static Model block(String parent, TextureKey... requiredTextureKeys) {
         return new Model(Optional.of(Identifier.of(MOD_ID, "block/" + parent)), Optional.empty(), requiredTextureKeys);

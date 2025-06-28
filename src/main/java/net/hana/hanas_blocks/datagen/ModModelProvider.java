@@ -12,22 +12,12 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.hana.hanas_blocks.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.data.client.*;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
-
-    //public static final TextureKey HANAFLOWERBED = TextureKey.of("hanaflowerbed");
-
-    //public static TextureMap hanaflowerbed(Block block) {
-    //    return new TextureMap().put(TextureKey.FLOWERBED, TextureMap.getId(block)).put(TextureKey.STEM, TextureMap.getSubId(block, "_stem"));
-    //}
 
     private static final String TOP_SUFFIX = "_top";
     private static final String SIDE_SUFFIX = "_side";
